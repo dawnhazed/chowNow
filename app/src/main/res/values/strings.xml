@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">chowNow</string>
+
+    <!--welcome page-->
+    <string name="title_welcome_page">Selamat Datang di ChowNow!</string>
+    <string name="subtitle1_welcome_page">Siap untuk memesan makanan terdekat darimu?</string>
+    <string name="masuk">Masuk</string>
+    <string name="daftar_underline"><u>Daftar</u></string>
+
 </resources>

@@ -9,6 +9,7 @@
         android:id="@+id/text_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:text="Hello, this is Profile Fragment"
+        android:gravity="center" />
 
 </FrameLayout>

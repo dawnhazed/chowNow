@@ -10,4 +10,10 @@
     <string name="search">Search</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
+
+    <string name="headline_dashboard">Laper? \nYuk cari santapan terdekat!</string>
+    <string name="lokasi_saat_ini">Lokasi saat ini:</string>
+    <string name="lokasi_aktif">Lokasi aktif</string>
+    <string name="detail_lokasi">Jl. Sukamaju, Kelurahan Pantang Mundur, Jakarta Pusat</string>
+    <string name="status_pesanan_kamu">Status Pesanan Kamu</string>
 </resources>

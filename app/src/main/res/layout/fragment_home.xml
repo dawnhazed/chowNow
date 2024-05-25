@@ -25,7 +25,7 @@
             android:layout_marginBottom="10dp">
 
             <TextView
-                android:id="@+id/text_history"
+                android:id="@+id/tv_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -47,7 +47,7 @@
             android:background="@drawable/rounded_orange_sec_bg">
 
             <TextView
-                android:id="@+id/lokasi_saat_ini"
+                android:id="@+id/tv_lokasi_saat_ini"
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textColor="@color/black"
@@ -64,7 +64,7 @@
                 android:layout_marginTop="4dp"
                 android:src="@drawable/location_on"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lokasi_saat_ini"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
 
             <TextView
                 android:id="@+id/lokasi_aktif"
@@ -76,10 +76,10 @@
                 android:textSize="10sp"
                 android:text="@string/lokasi_aktif"
                 app:layout_constraintStart_toEndOf="@id/iv_lokasi"
-                app:layout_constraintTop_toBottomOf="@id/lokasi_saat_ini"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
 
             <TextView
-                android:id="@+id/detail_lokasi"
+                android:id="@+id/tv_detail_lokasi"
                 android:layout_width="340dp"
                 android:layout_height="16dp"
                 android:layout_marginTop="4dp"
@@ -91,6 +91,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <Button
+                android:id="@+id/btn_edit_lokasi"
                 android:layout_width="96dp"
                 android:layout_height="32dp"
                 android:padding="8dp"
@@ -114,7 +115,7 @@
             android:background="@drawable/rounded_blue_sec_bg">
 
             <TextView
-                android:id="@+id/status_pesanan"
+                android:id="@+id/tv_status_pesanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -125,7 +126,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/status_pesanan_sekarang"
+                android:id="@+id/tv_status_pesanan_sekarang"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_marginTop="4dp"
@@ -138,7 +139,7 @@
                 android:textStyle="bold"
                 android:text="Diproses"
                 android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/status_pesanan"
+                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan"
                 app:layout_constraintStart_toStartOf="parent"
                 android:background="@drawable/rounded_blue_prim_bg"/>
 
@@ -149,10 +150,10 @@
                 android:layout_marginTop="4dp"
                 android:src="@drawable/food_bank"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/status_pesanan_sekarang"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
 
             <TextView
-                android:id="@+id/nama_resto"
+                android:id="@+id/tv_nama_resto"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -161,7 +162,7 @@
                 android:textSize="10sp"
                 android:text="Restoran Padang Sederhana"
                 app:layout_constraintStart_toEndOf="@id/iv_food_bank"
-                app:layout_constraintTop_toBottomOf="@id/status_pesanan_sekarang"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
 
             <TextView
                 android:id="@+id/space_status_pesanan"
@@ -170,14 +171,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/rounded_blue_prim_bg"
-                app:layout_constraintBottom_toBottomOf="@id/nama_resto"
-                app:layout_constraintTop_toTopOf="@id/status_pesanan"
-                app:layout_constraintEnd_toStartOf="@id/estimasi_waktu"
-                app:layout_constraintStart_toEndOf="@+id/nama_resto"
+                app:layout_constraintBottom_toBottomOf="@id/tv_nama_resto"
+                app:layout_constraintTop_toTopOf="@id/tv_status_pesanan"
+                app:layout_constraintEnd_toStartOf="@id/tv_estimasi_waktu"
+                app:layout_constraintStart_toEndOf="@+id/tv_nama_resto"
                 />
 
             <TextView
-                android:id="@+id/estimasi_waktu"
+                android:id="@+id/tv_estimasi_waktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
@@ -189,7 +190,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/waktu_menit"
+                android:id="@+id/tv_waktu_menit"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
                 android:layout_marginTop="10dp"
@@ -200,11 +201,11 @@
                 android:text="7"
                 android:foregroundGravity="bottom"
                 app:layout_constraintStart_toStartOf="@id/space_status_pesanan"
-                app:layout_constraintEnd_toStartOf="@id/waktu_satuan"
-                app:layout_constraintTop_toBottomOf="@id/estimasi_waktu"/>
+                app:layout_constraintEnd_toStartOf="@id/tv_waktu_satuan"
+                app:layout_constraintTop_toBottomOf="@id/tv_estimasi_waktu"/>
 
             <TextView
-                android:id="@+id/waktu_satuan"
+                android:id="@+id/tv_waktu_satuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -212,9 +213,55 @@
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:text="Menit"
-                app:layout_constraintStart_toEndOf="@id/waktu_menit"
-                app:layout_constraintBottom_toBottomOf="@id/waktu_menit"/>
+                app:layout_constraintStart_toEndOf="@id/tv_waktu_menit"
+                app:layout_constraintBottom_toBottomOf="@id/tv_waktu_menit"/>
 
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rekomendasi_resto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/rekomendasi_untuk_kamu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rekomendasi_untuk_kamu"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_lihat_lebih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lihat_lebih"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_orange_sec_bg">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_resto_rekomendasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="16dp"
+                app:layout_behavior="@string/material_motion_easing_linear"
+                tools:listitem="@layout/item_rekomendasi">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -16,4 +16,6 @@
     <string name="lokasi_aktif">Lokasi aktif</string>
     <string name="detail_lokasi">Jl. Sukamaju, Kelurahan Pantang Mundur, Jakarta Pusat</string>
     <string name="status_pesanan_kamu">Status Pesanan Kamu</string>
+    <string name="rekomendasi_untuk_kamu">Rekomendasi untuk Kamu</string>
+    <string name="lihat_lebih">Lihat lebih</string>
 </resources>

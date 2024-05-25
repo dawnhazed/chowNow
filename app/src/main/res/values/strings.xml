@@ -7,4 +7,13 @@
     <string name="masuk">Masuk</string>
     <string name="daftar_underline"><u>Daftar</u></string>
 
+    <!--login register page-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="to_daftar">Belum punya akun? <u>Daftar</u></string>
+    <string name="to_masuk">Sudah punya akun? <u>Masuk</u></string>
+    <string name="daftar">Daftar</string>
+    <string name="nama">Nama</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>

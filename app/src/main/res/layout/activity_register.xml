@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/white"
-    tools:context=".ui.loginregister.login.LoginActivity">
+    tools:context=".ui.loginregister.register.RegisterActivity">
 
     <TextView
         android:id="@+id/titleTextView"
@@ -16,7 +15,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/masuk"
+        android:text="@string/daftar"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:fontFamily="@font/poppins_bold"
@@ -25,6 +24,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/nama"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <EditText
+        android:id="@+id/nameEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/roundedtextbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/username"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout" />
+
+    <EditText
+        android:id="@+id/usernameEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@drawable/roundedtextbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextView" />
 
     <TextView
         android:id="@+id/emailTextView"
@@ -37,7 +88,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameEditTextLayout" />
 
     <EditText
         android:id="@+id/emailEditTextLayout"
@@ -51,15 +102,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
-
-     <!--   <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout> -->
 
     <TextView
         android:id="@+id/passwordTextView"
@@ -89,17 +131,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
 
-      <!--  <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </com.google.android.material.textfield.TextInputLayout> -->
+    <TextView
+        android:id="@+id/confirmPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/confirm_password"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+
+    <EditText
+        android:id="@+id/confirmPasswordEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:inputType="textPassword"
+        android:background="@drawable/roundedtextbox"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordTextView" />
+
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registerButton"
         android:layout_width="200dp"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
@@ -108,7 +170,7 @@
         android:backgroundTint="@color/orange_primary"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="@string/masuk"
+        android:text="@string/daftar"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -116,10 +178,10 @@
         android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditTextLayout" />
 
     <TextView
-        android:id="@+id/signupFromLogin"
+        android:id="@+id/loginFromRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -127,11 +189,11 @@
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="@string/to_daftar"
+        android:text="@string/to_masuk"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

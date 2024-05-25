@@ -42,8 +42,7 @@ android {
 }
 
 dependencies {
-    implementation("com.google.android.material:material:1.0.0-beta01")
-    implementation("com.android.support:design:27.1.1")
+    implementation("com.google.android.material:material:1.4.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

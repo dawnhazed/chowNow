@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.chownow.R
 import com.dicoding.chownow.databinding.ActivityWelcomeBinding
+import com.dicoding.chownow.ui.loginregister.login.LoginActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -38,7 +39,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     private fun setupAction(){
         binding.loginButton.setOnClickListener {
-            // startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         binding.signupButton.setOnClickListener {

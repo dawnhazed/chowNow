@@ -58,12 +58,13 @@
             android:textSize="12sp"
             android:gravity="start"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf=""
+            app:layout_constraintEnd_toStartOf="@id/ic_star"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
             tools:text="35 Meter" />
 
         <ImageView
+            android:id="@+id/ic_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/star_border"

@@ -11,7 +11,9 @@
         android:id="@+id/tv_judul_konfirmasi_pesanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -24,6 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="14sp"
         android:textColor="@color/black"
         android:text="@string/date_confirm_order"
@@ -35,6 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/food_bank"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_date_order"/>
@@ -55,7 +61,7 @@
         android:id="@+id/tv_estimasi_waktu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="Estimasi Waktu"
         android:textColor="@color/black"
@@ -79,7 +85,7 @@
         android:id="@+id/tv_nomor_pesanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="Nomor Pesanan"
         android:textColor="@color/black"
@@ -104,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/ubah_pesanan"
         android:textColor="@color/black"
         android:textSize="14sp"
@@ -119,20 +125,79 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_ubah_pesanan"
         />
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
+    <!-- Footer Layout -->
+    <LinearLayout
+        android:id="@+id/order_detail_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:orientation="horizontal"
         android:background="@drawable/rounded_bottom_nav"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/order_cta_footer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <!-- Total Items -->
+        <TextView
+            android:id="@+id/tv_total_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:text="4 item"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_shopping_bag"
+            android:drawablePadding="4dp"
+            android:textAppearance="?attr/textAppearanceBody1" />
 
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:text="Rp. 100.000"
+            android:textAppearance="?attr/textAppearanceBody1" />
 
-    </View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/order_cta_footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/blue_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Order Button -->
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="Pesan"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

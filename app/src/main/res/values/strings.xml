@@ -18,4 +18,7 @@
     <string name="status_pesanan_kamu">Status Pesanan Kamu</string>
     <string name="rekomendasi_untuk_kamu">Rekomendasi untuk Kamu</string>
     <string name="lihat_lebih">Lihat lebih</string>
+    <string name="konfirmasi_pesanan">Konfirmasi Pesanan</string>
+    <string name="date_confirm_order">Selasa, 8 Mei 2024 09:30</string>
+    <string name="ubah_pesanan"><u>Ubah Pesanan</u></string>
 </resources>

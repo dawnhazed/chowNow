@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="96dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_orange_sec_bg"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_food_image"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/blue_primary" /> <!-- Placeholder for food image -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_food_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Nama Makanan"
+            android:textAppearance="?attr/textAppearanceBody1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Rp 25.000"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+            <Space
+                android:layout_width="76dp"
+                android:layout_height="0dp" />
+
+            <Button
+                android:id="@+id/btn_decrease"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:text="-"
+                android:backgroundTint="?attr/colorPrimary" />
+
+            <Space
+                android:layout_width="4dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:text="1"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+            <Space
+                android:layout_width="4dp"
+                android:layout_height="0dp" />
+
+            <Button
+                android:id="@+id/btn_increase"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="end"
+                android:text="+"
+                android:textSize="12sp"
+                android:backgroundTint="?attr/colorPrimary" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

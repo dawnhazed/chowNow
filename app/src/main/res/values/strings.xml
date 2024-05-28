@@ -36,4 +36,16 @@
     <string name="rekomendasi_untuk_kamu">Rekomendasi untuk Kamu</string>
     <string name="lihat_lebih">Lihat lebih</string>
 
+    <!--detail resto-->
+    <string name="nama_restoran">Nama Restoran</string>
+    <string name="rating">5.0/5.0</string>
+    <string name="distance">2.3 km</string>
+    <string name="didirikan">Didirikan oleh:</string>
+    <string name="jenis">Jenis Kuliner:</string>
+    <string name="sejak">Didirikan sejak:</string>
+    <string name="dijual">Menu yang dijual:</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="item_count">1 item</string>
+    <string name="harga">100.000</string>
+
 </resources>

@@ -21,4 +21,6 @@
     <string name="konfirmasi_pesanan">Konfirmasi Pesanan</string>
     <string name="date_confirm_order">Selasa, 8 Mei 2024 09:30</string>
     <string name="ubah_pesanan"><u>Ubah Pesanan</u></string>
+    <string name="back_button">Back Button</string>
+    <string name="location_icon">Location Icon</string>
 </resources>

@@ -20,7 +20,6 @@ class DashboardActivity : AppCompatActivity() {
         Log.d("DashboardActivity", "Inflating layout")
         enableEdgeToEdge()
 
-
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("DashboardActivity", "Layout inflated")

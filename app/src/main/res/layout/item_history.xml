@@ -15,7 +15,7 @@
 
         <!-- ImageView untuk gambar restoran -->
         <ImageView
-            android:id="@+id/imageViewRestaurant"
+            android:id="@+id/iv_resto"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="8dp"
@@ -27,39 +27,56 @@
 
         <!-- Nama Restoran -->
         <TextView
-            android:id="@+id/textViewRestaurantName"
-            android:layout_width="0dp"
+            android:id="@+id/tv_nama_resto"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Nama Restoran"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewRestaurant"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" />
 
         <!-- Jumlah Pesanan -->
         <TextView
-            android:id="@+id/textViewOrderQuantity"
+            android:id="@+id/tv_jumlah_pesanan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Jumlah Pesanan: 3 Makanan"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantName"
-            app:layout_constraintStart_toEndOf="@+id/imageViewRestaurant"
-            app:layout_constraintEnd_toStartOf="@+id/textViewOrderTime"
+            android:layout_marginStart="8dp"
+            android:text="Jumlah Pesanan:"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_jumlah_pesanan_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="3 Makanan"
+            app:layout_constraintTop_toBottomOf="@id/tv_jumlah_pesanan"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintHorizontal_bias="0.0" />
 
         <!-- Waktu Pesan -->
         <TextView
-            android:id="@+id/textViewOrderTime"
+            android:id="@+id/tv_waktu_pesan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Waktu Pesan: Hari ini, 17.30"
-            app:layout_constraintTop_toTopOf="@+id/textViewOrderQuantity"
+            android:text="Waktu Pesan:"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewOrderQuantity"
-            app:layout_constraintStart_toEndOf="@+id/textViewOrderQuantity"
-            app:layout_constraintHorizontal_bias="1.0" />
+            app:layout_constraintTop_toTopOf="@id/tv_jumlah_pesanan"
+            app:layout_constraintHorizontal_bias="0.0" />
+        <TextView
+            android:id="@+id/tv_waktu_pesan_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hari ini, 17.30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_waktu_pesan"
+            app:layout_constraintHorizontal_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

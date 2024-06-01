@@ -24,4 +24,6 @@
     <string name="back_button">Back Button</string>
     <string name="location_icon">Location Icon</string>
     <string name="restaurant_image">Image Resto</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="edit_profile"><u>Edit Profile</u></string>
 </resources>

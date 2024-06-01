@@ -94,7 +94,7 @@
                 android:id="@+id/btn_edit_lokasi"
                 android:layout_width="96dp"
                 android:layout_height="32dp"
-                android:padding="8dp"
+                android:padding="0dp"
                 android:layout_margin="0dp"
                 android:text="Edit Lokasi"
                 android:textSize="12sp"
@@ -249,7 +249,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="220dp"
             android:background="@drawable/rounded_orange_sec_bg">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -257,7 +257,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:padding="16dp"
+                android:padding="0dp"
                 app:layout_behavior="@string/material_motion_easing_linear"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

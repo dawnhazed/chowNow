@@ -1,0 +1,18 @@
+[33m1273373[m[33m ([m[1;36mHEAD -> [m[1;32mdetailResto[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mdevelopment[m[33m)[m merge welcome page login register and dashboard
+[33mb036edb[m minor changes home fragment, fragment home and item rekomendasi
+[33m1f858c0[m[33m ([m[1;32mmaster[m[33m)[m fixing location login layout
+[33m9943614[m update minor fragment home layout and adding item rekomendasi
+[33m7c65ea6[m welcome-register, need minor fix on layout center
+[33mc0f7b5f[m welcome page done, intent to login still error
+[33m4abb9d4[m update positioning dashboard
+[33mec25409[m adding lokasi saat ini sama status pesanan
+[33m2db9e99[m update padding and rounded corner bottom nav
+[33mffd24ea[m fix bottom navigate
+[33m39be03b[m fixing force close app
+[33m3c5477a[m adding dashboard activity for bottom navigation with assets and layout but still fixing force close app
+[33m8ee82ac[m Welcome Page Commit
+[33mc49116c[m Merge remote-tracking branch 'origin/master'
+[33m3eb2658[m Package Commit
+[33m291cb5c[m tes
+[33m1b9ce1e[m Second Initial Commit
+[33m6ccad32[m Initial commit

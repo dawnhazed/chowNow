@@ -35,5 +35,17 @@
     <string name="status_pesanan_kamu">Status Pesanan Kamu</string>
     <string name="rekomendasi_untuk_kamu">Rekomendasi untuk Kamu</string>
     <string name="lihat_lebih">Lihat lebih</string>
+<<<<<<< HEAD
 
+=======
+    <string name="konfirmasi_pesanan">Konfirmasi Pesanan</string>
+    <string name="date_confirm_order">Selasa, 8 Mei 2024 09:30</string>
+    <string name="ubah_pesanan"><u>Ubah Pesanan</u></string>
+    <string name="back_button">Back Button</string>
+    <string name="location_icon">Location Icon</string>
+    <string name="restaurant_image">Image Resto</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="edit_profile"><u>Edit Profile</u></string>
+    <string name="image_resto">Image Resto</string>
+>>>>>>> dashboard
 </resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/orange_secondary"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- ImageView untuk gambar menu -->
+        <ImageView
+            android:id="@+id/iv_resto"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/restaurant_image"
+            android:background="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Nama Restoran -->
+        <TextView
+            android:id="@+id/tv_nama_resto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Nama Makanan"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <!-- Informasi Jarak dan Waktu -->
+        <TextView
+            android:id="@+id/tv_estimate_reach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Rp. 25.000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
+             />
+
+        <!-- Tombol Add/Subtract -->
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_add_value"
+            app:layout_constraintEnd_toStartOf="@+id/tv_add_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_add_value" />
+
+        <TextView
+            android:id="@+id/tv_add_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:text="2"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_subtract"
+            app:layout_constraintEnd_toStartOf="@+id/btn_subtract"
+            app:layout_constraintTop_toTopOf="@+id/btn_subtract" />
+
+        <Button
+            android:id="@+id/btn_subtract"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="rounded_rectangle">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="tab_text">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar" >
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+        <item name="android:minHeight">15dip</item>
+        <item name="maxHeight">47dip</item>
+    </style>
+</resources>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.history.StatusActivity">
+
+    <ImageView
+        android:id="@+id/back_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/back_arrow" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="@string/status_pesanan"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_icon"/>
+
+    <TextView
+        android:id="@+id/text_tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/tanggal"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"/>
+
+    <TextView
+        android:id="@+id/text_jam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/jam"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintStart_toEndOf="@+id/text_tanggal" />
+
+    <ImageView
+        android:id="@id/logo_resto"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:src="@drawable/food_bank"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_tanggal"/>
+
+    <TextView
+        android:id="@+id/nama_restoran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/nama_restoran"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:layout_marginStart="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_tanggal"
+        app:layout_constraintStart_toEndOf="@+id/logo_resto" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/section_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/section_top_status"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_resto" >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/estimasi_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="@string/estimasi_waktu"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/estimasi_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="@string/estimasi_detail"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:paddingBottom="5dp"
+            app:layout_constraintTop_toBottomOf="@id/estimasi_title_text"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nomor_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="@string/nomor_pesanan"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/nomor_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="@string/nomor_detail"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:paddingBottom="5dp"
+            app:layout_constraintTop_toBottomOf="@id/estimasi_title_text"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/section_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/section_bottom_status"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_top" >
+
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="@string/total"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/status_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/section_bottom"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <View
+            android:id="@+id/garis_status"
+            android:layout_width="5dp"
+            android:layout_height="195dp"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/status_vector">
+
+            <View
+                android:id="@+id/circle1"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/cicrle_blue" />
+            <View
+                android:id="@+id/circle2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/cicrle_blue" />
+
+            <View
+                android:id="@+id/circle3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/cicrle_blue" />
+
+            <View
+                android:id="@+id/circle4"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/cicrle_blue" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/status_vector"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/garis_status">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/status1" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/status2"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/status3"/>
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/status_4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/status_vector" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status1"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status1_detail"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status2"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status2_detail"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status3"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status3_detail"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status4"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status4_detail"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:numStars="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_log" />
+
+    <EditText
+        android:id="@+id/reviewEditTextLayout"
+        android:layout_marginTop="17dp"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:hint="Beri Ulasan..."
+        android:textSize="14sp"
+        android:background="@drawable/rounded_grey"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rating_bar"
+        app:layout_constraintTop_toBottomOf="@id/status_log" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

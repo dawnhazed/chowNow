@@ -47,5 +47,25 @@
     <string name="keterangan">Keterangan</string>
     <string name="item_count">1 item</string>
     <string name="harga">100.000</string>
+    
+    <!--status pesanan-->
+    <string name="status_pesanan">Status Pesanan</string>
+    <string name="tanggal">Selasa, 8 Mei 2024</string>
+    <string name="jam">09.30</string>
+    <string name="estimasi_waktu">Estimasi Waktu</string>
+    <string name="nomor_pesanan">Nomor Pesanan</string>
+    <string name="menit">menit</string>
+    <string name="estimasi_detail">7m</string>
+    <string name="nomor_detail"># 123</string>
+    <string name="total">Total: Rp23.000</string>
+
+    <string name="status1">Status 1</string>
+    <string name="status1_detail">Detail Status 1</string>
+    <string name="status2">Status 2</string>
+    <string name="status2_detail">Detail Status 2</string>
+    <string name="status3">Status 3</string>
+    <string name="status3_detail">Detail Status 3</string>
+    <string name="status4">Status 4</string>
+    <string name="status4_detail">Detail Status 4</string>
 
 </resources>

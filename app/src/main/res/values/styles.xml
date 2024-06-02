@@ -13,4 +13,10 @@
         <item name="textAllCaps">false</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar" >
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+        <item name="android:minHeight">15dip</item>
+        <item name="maxHeight">47dip</item>
+    </style>
 </resources>

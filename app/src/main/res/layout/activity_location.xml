@@ -7,27 +7,33 @@
     tools:context=".ui.dashboard.geolocation.LocationActivity">
 
     <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/back_button"
-        android:src="@drawable/ic_back"
+        android:id="@+id/back_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/back_arrow" />
 
     <EditText
         android:id="@+id/et_search_location"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:hint="Cari Lokasi"
-        android:padding="12dp"
         android:drawableEnd="@drawable/ic_search"
+        android:background="@drawable/roundedtextbox"
         android:drawablePadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+        app:layout_constraintTop_toBottomOf="@id/back_icon" />
 
     <ImageView
         android:id="@+id/iv_geolocation"
@@ -47,8 +53,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Lokasi Sekarang"
+        android:fontFamily="@font/poppins_bold"
         android:textStyle="bold"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_geolocation" />
 
@@ -56,37 +64,44 @@
         android:id="@+id/ll_current_location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_current_location">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
             android:contentDescription="@string/location_icon"
-            android:background="@color/orange_secondary"
+            android:background="@drawable/circle_light_orange"
             android:src="@drawable/ic_my_location" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Lokasi"
-                android:textStyle="bold" />
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="Nama Lokasi" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="12sp"
                 android:text="Jl. Nama Jalan Nomor Rumah , Kelurahan, Kecamatan, Nama Kota, Kode Pos" />
         </LinearLayout>
     </LinearLayout>
@@ -98,8 +113,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Riwayat Lokasi"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_current_location" />
 
@@ -107,9 +123,8 @@
         android:id="@+id/rv_location_history"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -53,7 +53,6 @@
             android:editable="false"
             android:hint="Email"
             android:inputType="textEmailAddress"
-
             app:layout_constraintBottom_toTopOf="@+id/button_edit_profile"
             app:layout_constraintEnd_toEndOf="@+id/button_edit_profile"
             app:layout_constraintHorizontal_bias="0.0"
@@ -67,6 +66,8 @@
             android:text="@string/edit_profile"
             android:background="colorAccent"
             android:textColor="@color/orange_primary"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -5,21 +5,26 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:cardCornerRadius="4dp"
+    app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
     app:cardMaxElevation="4dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginStart="3dp"
+    android:layout_marginEnd="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="160dp"
-        android:layout_height="180dp"
-        android:background="@color/orange_secondary">
+        android:layout_height="wrap_content"
+        android:background="@color/orange_secondary"
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/img_resto"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
@@ -31,43 +36,44 @@
 
         <TextView
             android:id="@+id/tv_nama_resto"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="18dp"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_resto"
             tools:text="Nama Resto" />
 
         <TextView
             android:id="@+id/tv_jarak"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="18dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="3"
             android:textSize="12sp"
             android:gravity="start"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@id/ic_star"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
             tools:text="35 Meter" />
 
         <ImageView
             android:id="@+id/ic_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/star_border"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/star_stroke"
             app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
             app:layout_constraintEnd_toStartOf="@id/tv_rating" />
 
@@ -76,9 +82,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="18dp"
             android:ellipsize="end"
             android:maxLines="3"
+            android:fontFamily="@font/poppins"
             android:textSize="12sp"
             android:gravity="end"
             android:textColor="@color/black"

@@ -45,6 +45,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/phone" />
 
+
     </LinearLayout>
 
     <TextView

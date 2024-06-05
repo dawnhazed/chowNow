@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.resto.confirm.ConfirmOrderActivity">
 
+    <ImageView
+        android:id="@+id/back_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/back_arrow" />
+
     <TextView
         android:id="@+id/tv_judul_konfirmasi_pesanan"
         android:layout_width="wrap_content"
@@ -14,21 +26,22 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="20sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:text="@string/konfirmasi_pesanan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/back_icon" />
 
     <TextView
         android:id="@+id/tv_date_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="14sp"
+        android:fontFamily="@font/poppins"
+        android:textSize="12sp"
         android:textColor="@color/black"
         android:text="@string/date_confirm_order"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,9 +49,8 @@
 
     <ImageView
         android:id="@+id/iv_food_bank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/food_bank"
@@ -49,10 +61,11 @@
         android:id="@+id/tv_nama_resto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
+        android:padding="2dp"
         android:text="Restoran Padang Sederhana"
         app:layout_constraintStart_toEndOf="@id/iv_food_bank"
         app:layout_constraintTop_toBottomOf="@id/tv_date_order"/>
@@ -64,20 +77,22 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="Estimasi Waktu"
+        android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_food_bank" />
 
     <TextView
         android:id="@+id/tv_waktu_menit"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:text="7 Menit"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tv_estimasi_waktu"
         app:layout_constraintTop_toTopOf="@+id/tv_estimasi_waktu" />
 
@@ -86,22 +101,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
         android:text="Nomor Pesanan"
+        android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_estimasi_waktu" />
 
     <TextView
         android:id="@+id/tv_nomor_pesanan_value"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="7dp"
         android:text="#123"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/tv_nomor_pesanan"
         app:layout_constraintTop_toTopOf="@id/tv_nomor_pesanan" />
 
@@ -109,15 +125,15 @@
         android:id="@+id/tv_ubah_pesanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
         android:text="@string/ubah_pesanan"
+        android:fontFamily="@font/poppins"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
         android:gravity="end"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nomor_pesanan_value" />
+        app:layout_constraintTop_toBottomOf="@id/tv_waktu_menit" />
 
     <!-- Recycler View that contains list of food -->
 
@@ -147,17 +163,24 @@
         <!-- Total Items -->
         <TextView
             android:id="@+id/tv_total_items"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:gravity="start"
             android:text="4 item"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="14sp"
             android:textColor="@color/white"
-            android:drawableStart="@drawable/ic_shopping_bag"
             android:drawablePadding="4dp"
             android:textAppearance="?attr/textAppearanceBody1" />
+
+        <ImageView
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/shopping_bag_white"/>
 
         <!-- Total Price -->
         <TextView
@@ -168,6 +191,8 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:gravity="end"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="14sp"
             android:textColor="@color/white"
             android:text="Rp. 100.000"
             android:textAppearance="?attr/textAppearanceBody1" />
@@ -188,12 +213,15 @@
         <Button
             android:id="@+id/btn_order"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
-            android:backgroundTint="?attr/colorPrimary"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/orange_primary"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/roundedbutton"
             android:text="Pesan"
             android:textColor="@android:color/white" />
 

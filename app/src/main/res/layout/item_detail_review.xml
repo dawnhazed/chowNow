@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     android:layout_marginStart="3dp"
     android:layout_marginEnd="3dp"
+    android:backgroundTint="@color/orange_secondary"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    android:backgroundTint="@color/orange_secondary">
+    app:cardElevation="4dp" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- ImageView untuk gambar restoran -->
+        <!-- ImageView untuk gambar menu -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_resto"
             android:layout_width="64dp"
@@ -28,76 +30,61 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:shapeAppearanceOverlay="@style/rounded_rectangle"/>
+            app:shapeAppearanceOverlay="@style/circular"/>
 
         <!-- Nama Restoran -->
         <TextView
-            android:id="@+id/tv_nama_resto"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_nama_user"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Nama Restoran"
+            android:layout_marginStart="10dp"
+            android:text="Nama User"
             android:textSize="16sp"
-            android:fontFamily="@font/poppins_semibold"
-            android:textStyle="bold"
             android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" />
 
-        <!-- Jumlah Pesanan -->
         <TextView
-            android:id="@+id/tv_jumlah_pesanan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/poppins"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:text="Jumlah Pesanan:"
-            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
-            app:layout_constraintStart_toEndOf="@id/iv_resto"
-            app:layout_constraintHorizontal_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_jumlah_pesanan_value"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-5dp"
-            android:layout_marginStart="8dp"
-            android:text="3 Makanan"
-            android:fontFamily="@font/poppins"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/tv_jumlah_pesanan"
-            app:layout_constraintStart_toEndOf="@id/iv_resto"
-            app:layout_constraintHorizontal_bias="0.0" />
-
-        <!-- Waktu Pesan -->
-        <TextView
-            android:id="@+id/tv_waktu_pesan"
+            android:id="@+id/tv_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Waktu Pesan:"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-5dp"
+            android:text="Mantap"
             android:fontFamily="@font/poppins"
             android:textSize="14sp"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_jumlah_pesanan"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_user"
+            app:layout_constraintStart_toEndOf="@id/iv_resto" />
+
         <TextView
-            android:id="@+id/tv_waktu_pesan_value"
+            android:id="@+id/tv_item_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Cilor, 2 porsi"
+            android:fontFamily="@font/poppins"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_review"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_resto" />
+
+        <TextView
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-5dp"
-            android:text="Hari ini, 17.30"
+            android:layout_marginStart="10dp"
+            android:text="1 hari lalu"
             android:fontFamily="@font/poppins"
             android:textSize="14sp"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_waktu_pesan"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

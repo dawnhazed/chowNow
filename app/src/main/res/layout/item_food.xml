@@ -19,7 +19,7 @@
         android:padding="16dp">
 
         <!-- ImageView untuk gambar menu -->
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_resto"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -28,7 +28,8 @@
             android:background="@drawable/ic_launcher_background"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shapeAppearanceOverlay="@style/rounded_rectangle"/>
 
         <!-- Nama Restoran -->
         <TextView

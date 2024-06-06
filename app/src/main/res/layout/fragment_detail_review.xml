@@ -5,11 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.resto.detail.DetailReviewFragment">
 
-    <TextView
-        android:id="@+id/text_detail_about"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pesanan_selesai"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Hello, this is ReviewFragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:padding="0dp"
+        app:layout_behavior="@string/material_motion_easing_linear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_rekomendasi_untuk_kamu"
+        tools:listitem="@layout/item_detail_review">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

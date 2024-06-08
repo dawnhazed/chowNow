@@ -23,7 +23,8 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -33,16 +34,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val recyclerView: RecyclerView = binding.recyclerView
-//        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        recyclerView.adapter = RestoAdapter(listOf("Item 1", "Item 2", "Item3"))
-
-//        val recyclerView: RecyclerView = findViewById(R.id.rv_resto_rekomendasi)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_resto_rekomendasi)
 
-
-        // Atur LayoutManager ke Horizontal
-//        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.layoutManager = layoutManager
 
@@ -61,8 +54,6 @@ class HomeFragment : Fragment() {
             // Tambahkan lebih banyak restoran sesuai kebutuhan
         )
 
-//        val data = (1..20).map { "Item $it" }
-
         // Atur adapter
         val adapter = RestoAdapter(restaurants)
         recyclerView.adapter = adapter
@@ -72,22 +63,4 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    //    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        val homeViewModel =
-//            ViewModelProvider(this).get(HomeViewModel::class.java)
-//
-//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-//        val textView: TextView = binding.tvJudulHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-//        return root
-//    }
 }

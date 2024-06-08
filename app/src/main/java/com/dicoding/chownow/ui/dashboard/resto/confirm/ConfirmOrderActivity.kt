@@ -27,20 +27,20 @@ class ConfirmOrderActivity : AppCompatActivity() {
             insets
         }
 
-        val foodItems = listOf(
-            FoodItem("Nama Makanan A", 25000, 1),
-            FoodItem("Nama Makanan B", 25000, 1),
-            FoodItem("Nama Makanan C", 25000, 1),
-            FoodItem("Nama Makanan D", 25000, 1),
-            FoodItem("Nama Makanan E", 25000, 1),
-            FoodItem("Nama Makanan F", 25000, 1),
-            FoodItem("Nama Makanan G", 25000, 1),
-            FoodItem("Nama Makanan H", 25000, 1)
-        )
-
-        val adapter = FoodItemAdapter(foodItems)
-        binding.rvFoodItems.adapter = adapter
-        binding.rvFoodItems.layoutManager = LinearLayoutManager(this)
+//        val foodItems = listOf(
+//            FoodItem("Nama Makanan A", 25000, 1),
+//            FoodItem("Nama Makanan B", 25000, 1),
+//            FoodItem("Nama Makanan C", 25000, 1),
+//            FoodItem("Nama Makanan D", 25000, 1),
+//            FoodItem("Nama Makanan E", 25000, 1),
+//            FoodItem("Nama Makanan F", 25000, 1),
+//            FoodItem("Nama Makanan G", 25000, 1),
+//            FoodItem("Nama Makanan H", 25000, 1)
+//        )
+//
+//        val adapter = FoodItemAdapter(foodItems)
+//        binding.rvFoodItems.adapter = adapter
+//        binding.rvFoodItems.layoutManager = LinearLayoutManager(this)
 
     }
 }

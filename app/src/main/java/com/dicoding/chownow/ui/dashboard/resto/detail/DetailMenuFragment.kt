@@ -35,15 +35,9 @@ class DetailMenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val detailMenuViewModel = ViewModelProvider(this).get(DetailMenuViewModel::class.java)
 
         _binding = FragmentDetailMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textDetailMenu
-        detailMenuViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
 
         return root
     }

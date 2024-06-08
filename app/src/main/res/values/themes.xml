@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
+
 <resources>
     <style name="Base.Theme.ChowNow" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/orange_primary</item>
         <item name="android:windowBackground">@color/white</item>
-=======
-<resources xmlns:tools="http://schemas.android.com/tools">
+    </style>
 
     <style name="Theme.ChowNow" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@color/black</item>
->>>>>>> dashboard
     </style>
 
-    <style name="Theme.ChowNow" parent="Base.Theme.ChowNow"/>
->>>>>>> master
 </resources>

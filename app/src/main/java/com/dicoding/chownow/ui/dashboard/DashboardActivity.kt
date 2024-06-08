@@ -24,6 +24,9 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d("DashboardActivity", "Layout inflated")
 
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)

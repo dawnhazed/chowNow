@@ -22,16 +22,10 @@ class RestoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val restoViewModel =
-            ViewModelProvider(this).get(RestoViewModel::class.java)
 
         _binding = FragmentRestoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textResto
-        restoViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

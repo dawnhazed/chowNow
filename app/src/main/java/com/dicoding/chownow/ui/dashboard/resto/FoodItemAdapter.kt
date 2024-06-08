@@ -19,8 +19,8 @@ class FoodItemAdapter(private val foodItems: List<FoodItem>) :
     override fun onBindViewHolder(holder: FoodItemViewHolder, position: Int) {
         val foodItem = foodItems[position]
         with(holder.binding) {
-            tvFoodName.text = foodItem.name
-            tvFoodPrice.text = "Rp ${foodItem.price}"
+            tvNamaMakanan.text = foodItem.name
+            tvHarga.text = "Rp ${foodItem.price}"
             tvQuantity.text = foodItem.quantity.toString()
             // Set the click listeners for + and - buttons
         }

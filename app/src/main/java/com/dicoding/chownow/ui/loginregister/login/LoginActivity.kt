@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.dicoding.chownow.R
 import com.dicoding.chownow.databinding.ActivityLoginBinding
 import com.dicoding.chownow.ui.loginregister.register.RegisterActivity
-import com.google.android.ads.mediationtestsuite.viewmodels.ViewModelFactory
+//import com.google.android.ads.mediationtestsuite.viewmodels.ViewModelFactory
 
 class LoginActivity : AppCompatActivity() {
     // private val viewModel by viewModels<LoginViewModel> { ViewModelFactory.getInstance(this) }

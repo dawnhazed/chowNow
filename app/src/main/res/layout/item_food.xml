@@ -31,9 +31,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:shapeAppearanceOverlay="@style/rounded_rectangle"/>
 
-        <!-- Nama Restoran -->
+        <!-- Nama Makanan -->
         <TextView
-            android:id="@+id/tv_nama_resto"
+            android:id="@+id/tv_nama_makanan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -46,9 +46,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" />
 
-        <!-- Informasi Jarak dan Waktu -->
+        <!-- Informasi Harga -->
         <TextView
-            android:id="@+id/tv_estimate_reach"
+            android:id="@+id/tv_harga"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -67,9 +67,9 @@
             android:layout_height="18dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ic_add"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_add_value"
-            app:layout_constraintEnd_toStartOf="@+id/tv_add_value"
-            app:layout_constraintTop_toTopOf="@+id/tv_add_value" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_quantity"
+            app:layout_constraintEnd_toStartOf="@+id/tv_quantity"
+            app:layout_constraintTop_toTopOf="@+id/tv_quantity" />
 
         <View
             android:layout_width="21dp"
@@ -77,11 +77,11 @@
             android:layout_marginStart="-2dp"
             android:layout_marginTop="1dp"
             android:background="@drawable/circle_light_blue"
-            app:layout_constraintTop_toTopOf="@+id/tv_add_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_quantity"
             app:layout_constraintStart_toStartOf="@id/btn_add"/>
 
         <TextView
-            android:id="@+id/tv_add_value"
+            android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
@@ -99,7 +99,7 @@
             android:background="@drawable/ic_minus"
             android:layout_marginEnd="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_add_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_quantity"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <View
@@ -108,7 +108,7 @@
             android:layout_marginStart="-2dp"
             android:layout_marginTop="1dp"
             android:background="@drawable/circle_light_blue"
-            app:layout_constraintTop_toTopOf="@+id/tv_add_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_quantity"
             app:layout_constraintStart_toStartOf="@id/btn_subtract"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

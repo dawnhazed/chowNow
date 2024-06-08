@@ -35,15 +35,10 @@ class DetailReviewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val detailReviewViewModel = ViewModelProvider(this).get(DetailReviewViewModel::class.java)
 
         _binding = FragmentDetailReviewBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDetailAbout
-        detailReviewViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

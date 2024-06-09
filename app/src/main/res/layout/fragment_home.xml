@@ -7,206 +7,257 @@
     android:padding="16dp"
     tools:context=".ui.dashboard.home.HomeFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scrollbars="none">
 
-        <TextView
-            android:id="@+id/tv_judul_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="@string/headline_dashboard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@drawable/rounded_orange_sec_bg">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_lokasi_saat_ini"
+                android:id="@+id/tv_judul_home"
                 android:layout_width="wrap_content"
-                android:layout_height="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="@string/lokasi_saat_ini"
+                android:text="@string/headline_dashboard"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_lokasi"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/location_on"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@drawable/rounded_orange_sec_bg">
+
+                <TextView
+                    android:id="@+id/tv_lokasi_saat_ini"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/lokasi_saat_ini"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/iv_lokasi"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/location_on"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
+
+                <TextView
+                    android:id="@+id/lokasi_aktif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/lokasi_aktif"
+                    app:layout_constraintStart_toEndOf="@id/iv_lokasi"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
+
+                <TextView
+                    android:id="@+id/tv_detail_lokasi"
+                    android:layout_width="340dp"
+                    android:layout_height="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/detail_lokasi"
+                    app:layout_constraintTop_toBottomOf="@id/lokasi_aktif"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <Button
+                    android:id="@+id/btn_edit_lokasi"
+                    android:layout_width="128dp"
+                    android:layout_height="36dp"
+                    android:text="Edit Lokasi"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:backgroundTint="@color/orange_primary"
+                    android:background="@drawable/roundedbutton"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:background="@drawable/rounded_blue_sec_bg">
+
+                <TextView
+                    android:id="@+id/tv_status_pesanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="@string/status_pesanan_kamu"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_status_pesanan_sekarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="Diproses"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/roundedbutton"
+                    android:backgroundTint="@color/blue_primary"/>
+
+                <ImageView
+                    android:id="@+id/iv_food_bank"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/food_bank"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
+
+                <TextView
+                    android:id="@+id/tv_nama_resto"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:text="Restoran Padang Sederhana"
+                    app:layout_constraintStart_toEndOf="@id/iv_food_bank"
+                    app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
+
+                <View
+                    android:id="@+id/space_status_pesanan"
+                    android:layout_width="2dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/rounded_blue_prim_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_nama_resto"
+                    app:layout_constraintTop_toTopOf="@id/tv_status_pesanan"
+                    app:layout_constraintEnd_toStartOf="@id/tv_estimasi_waktu"
+                    app:layout_constraintStart_toEndOf="@+id/tv_nama_resto" />
+
+                <TextView
+                    android:id="@+id/tv_estimasi_waktu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:text="Estimasi Waktu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_waktu_menit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:text="7m"
+                    android:foregroundGravity="bottom"
+                    app:layout_constraintStart_toEndOf="@id/space_status_pesanan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_estimasi_waktu"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rekomendasi_resto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/rekomendasi_untuk_kamu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rekomendasi_untuk_kamu"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_lihat_lebih"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lihat_lebih"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/rounded_orange_sec_bg">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_resto_rekomendasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:padding="0dp"
+                    app:layout_behavior="@string/material_motion_easing_linear"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_rekomendasi">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/lokasi_aktif"
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="4dp"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:fontFamily="@font/poppins"
-                android:text="@string/lokasi_aktif"
-                app:layout_constraintStart_toEndOf="@id/iv_lokasi"
-                app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
-
-            <TextView
-                android:id="@+id/tv_detail_lokasi"
-                android:layout_width="340dp"
-                android:layout_height="16dp"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppins"
-                android:text="@string/detail_lokasi"
-                app:layout_constraintTop_toBottomOf="@id/lokasi_aktif"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <Button
-                android:id="@+id/btn_edit_lokasi"
-                android:layout_width="96dp"
-                android:layout_height="32dp"
-                android:text="Edit Lokasi"
-
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="12sp"
-                android:textColor="@color/white"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:backgroundTint="@color/orange_primary"
-                android:background="@drawable/roundedbutton"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="16dp"
-            android:background="@drawable/rounded_blue_sec_bg">
-
-            <TextView
-                android:id="@+id/tv_status_pesanan"
+                android:id="@+id/ulasan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:text="@string/status_pesanan_kamu"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/tv_status_pesanan_sekarang"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginTop="3dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:text="Diproses"
-                android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan"
-                app:layout_constraintStart_toStartOf="parent"
-                android:background="@drawable/roundedbutton"
-                android:backgroundTint="@color/blue_primary"/>
-
-            <ImageView
-                android:id="@+id/iv_food_bank"
-                android:layout_width="21dp"
-                android:layout_height="21dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/food_bank"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
-
-            <TextView
-                android:id="@+id/tv_nama_resto"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:text="Restoran Padang Sederhana"
-                app:layout_constraintStart_toEndOf="@id/iv_food_bank"
-                app:layout_constraintTop_toBottomOf="@id/tv_status_pesanan_sekarang"/>
-
-            <View
-                android:id="@+id/space_status_pesanan"
-                android:layout_width="2dp"
-                android:layout_height="0dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/rounded_blue_prim_bg"
-                app:layout_constraintBottom_toBottomOf="@id/tv_nama_resto"
-                app:layout_constraintTop_toTopOf="@id/tv_status_pesanan"
-                app:layout_constraintEnd_toStartOf="@id/tv_estimasi_waktu"
-                app:layout_constraintStart_toEndOf="@+id/tv_nama_resto" />
-
-            <TextView
-                android:id="@+id/tv_estimasi_waktu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"
-                android:textSize="14sp"
-                android:text="Estimasi Waktu"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/tv_waktu_menit"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginStart="16dp"
-                android:textColor="@color/white"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                android:text="7m"
-                android:foregroundGravity="bottom"
-                app:layout_constraintStart_toEndOf="@id/space_status_pesanan"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_estimasi_waktu"/>
-
-       </androidx.constraintlayout.widget.ConstraintLayout>
-        
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rekomendasi_resto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-
-            <TextView
-                android:id="@+id/rekomendasi_untuk_kamu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rekomendasi_untuk_kamu"
+                android:layout_marginTop="16dp"
+                android:text="Ini kata mereka"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -214,73 +265,27 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_lihat_lebih"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lihat_lebih"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins"
-                android:textSize="12sp"
-                android:layout_marginTop="2dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/rounded_orange_sec_bg">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ulasan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:padding="0dp"
+                    app:layout_behavior="@string/material_motion_easing_linear"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_ulasan_home">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:background="@drawable/rounded_orange_sec_bg">
+                </androidx.recyclerview.widget.RecyclerView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_resto_rekomendasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:padding="0dp"
-                app:layout_behavior="@string/material_motion_easing_linear"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/item_rekomendasi">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/ulasan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Ini kata mereka"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@drawable/rounded_orange_sec_bg">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_ulasan"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:padding="0dp"
-                app:layout_behavior="@string/material_motion_easing_linear"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/item_ulasan_home">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

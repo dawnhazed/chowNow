@@ -1,9 +1,10 @@
 package com.dicoding.chownow.data.model
 
 data class Ulasan(
-    val title: String,
-    val subtitle: String,
+    val imgResto: Int,
+    val namaResto: String,
+    val menuPesan: String,
     val reviewText: String,
     val reviewerName: String,
-    val antriInfo: String
+    val imgReviewer: Int
 )

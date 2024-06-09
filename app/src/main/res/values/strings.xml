@@ -78,4 +78,12 @@
     <string name="status4">Status 4</string>
     <string name="status4_detail">Detail Status 4</string>
 
+    <string name="distance_format">%d meter</string>
+
+    <string name="distance_format_km_info">%.2f km dari Anda</string>
+
+    <string name="time_format">%d menit</string>
+
+    <string name="rating_scale">%.1f/5.0</string>
+
 </resources>

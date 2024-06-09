@@ -49,7 +49,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/tv_nama_resto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,13 +66,13 @@
         app:layout_constraintTop_toBottomOf="@+id/top_icons"/>
 
     <LinearLayout
-        android:id="@+id/review_and_location"
+        android:id="@+id/rating_and_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
         app:layout_constraintStart_toStartOf="parent">
         
         <RatingBar
@@ -85,18 +85,18 @@
             style="?android:attr/ratingBarStyleSmall"/>
 
         <TextView
-            android:id="@+id/rating_bar_text"
+            android:id="@+id/rating_scale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:fontFamily="@font/poppins"
-            android:text="@string/rating"
+            android:text="@string/rating_scale"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_icons" />
+            app:layout_constraintTop_toBottomOf="@id/rating_and_location" />
 
         <ImageView
             android:id="@+id/location_icon"
@@ -110,26 +110,26 @@
             android:id="@+id/distance_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/distance"
+            android:text="@string/distance_format"
             android:textSize="12sp"
             android:textColor="@color/black"
             android:fontFamily="@font/poppins" />
     </LinearLayout>
-    
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/resto_image"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:src="@drawable/food_example"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/food_example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_and_location"
-        app:shapeAppearanceOverlay="@style/rounded_rectangle"/>
+        app:layout_constraintTop_toBottomOf="@+id/rating_and_location"
+        app:shapeAppearanceOverlay="@style/rounded_rectangle" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="32dp"
@@ -146,29 +146,29 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_orange_prim_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resto_image"
         app:tabIndicator="@drawable/rounded_orange_sec_bg"
+        app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorColor="@color/orange_secondary"
+        app:tabIndicatorFullWidth="false"
         app:tabIndicatorGravity="bottom"
         app:tabIndicatorHeight="7dp"
-        app:tabIndicatorFullWidth="false"
         app:tabMode="fixed"
-        app:tabIndicatorAnimationMode="elastic"
-        app:tabTextColor="@color/black"
         app:tabSelectedTextColor="@color/black"
         app:tabTextAppearance="@style/tab_text"
-        app:layout_constraintTop_toBottomOf="@id/resto_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    
+        app:tabTextColor="@color/black" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toBottomOf="@+id/tab_layout"

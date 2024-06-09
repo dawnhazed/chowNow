@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="320dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
@@ -16,7 +16,7 @@
         android:background="@color/orange_primary">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image_placeholder"
+            android:id="@+id/iv_resto"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/ic_launcher_background"
@@ -26,7 +26,7 @@
             app:shapeAppearanceOverlay="@style/rounded_rectangle"/>
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/tv_nama_resto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -36,23 +36,23 @@
             android:textStyle="bold"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_placeholder"
+            app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/subtitle"
+            android:id="@+id/tv_menu_pesan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Macilor 2 porsi"
             android:fontFamily="@font/poppins"
             android:textSize="12sp"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="@+id/title"
-            app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintEnd_toEndOf="@id/tv_nama_resto"
+            app:layout_constraintStart_toStartOf="@id/tv_nama_resto"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto" />
 
         <TextView
-            android:id="@+id/review_text"
+            android:id="@+id/tv_review_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -61,11 +61,11 @@
             android:text="“Abangnya seru, gak cuma cilornya yg enak. Nanti datang lagi dah.”"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/image_placeholder"
-            app:layout_constraintTop_toBottomOf="@+id/image_placeholder" />
+            app:layout_constraintStart_toStartOf="@id/iv_resto"
+            app:layout_constraintTop_toBottomOf="@id/iv_resto" />
 
         <TextView
-            android:id="@+id/reviewer_name"
+            android:id="@+id/tv_reviewer_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -74,11 +74,11 @@
             android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@id/antri_icon"
-            app:layout_constraintTop_toTopOf="@+id/antri_icon" />
+            app:layout_constraintEnd_toStartOf="@id/iv_reviewer"
+            app:layout_constraintTop_toTopOf="@id/iv_reviewer" />
 
         <TextView
-            android:id="@+id/antri_info"
+            android:id="@+id/tv_antri_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -87,19 +87,19 @@
             android:textSize="12dp"
             android:text="Antri hari ini, 16.30"
             android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="@+id/antri_icon"
-            app:layout_constraintEnd_toStartOf="@id/antri_icon"
-            app:layout_constraintTop_toBottomOf="@+id/reviewer_name" />
+            app:layout_constraintBottom_toBottomOf="@id/iv_reviewer"
+            app:layout_constraintEnd_toStartOf="@id/iv_reviewer"
+            app:layout_constraintTop_toBottomOf="@id/tv_reviewer_name" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/antri_icon"
+            android:id="@+id/iv_reviewer"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/ic_launcher_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/review_text"
+            app:layout_constraintTop_toBottomOf="@id/tv_review_text"
             app:shapeAppearanceOverlay="@style/circular"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

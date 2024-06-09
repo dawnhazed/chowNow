@@ -9,16 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.Ulasan
 
-class UlasanAdapter(private val ulasanList: List<Ulasan>) : RecyclerView.Adapter<UlasanAdapter.UlasanViewHolder>() {
+class UlasanAdapter(private val items: List<Ulasan>) : RecyclerView.Adapter<UlasanAdapter.UlasanViewHolder>() {
 
-    class UlasanViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imagePlaceholder: ImageView = itemView.findViewById(R.id.image_placeholder)
-        val title: TextView = itemView.findViewById(R.id.title)
-        val subtitle: TextView = itemView.findViewById(R.id.subtitle)
-        val reviewText: TextView = itemView.findViewById(R.id.review_text)
-        val reviewerName: TextView = itemView.findViewById(R.id.reviewer_name)
-        val antriInfo: TextView = itemView.findViewById(R.id.antri_info)
-        val antriIcon: ImageView = itemView.findViewById(R.id.antri_icon)
+    class UlasanViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imgResto: ImageView = view.findViewById(R.id.iv_resto)
+        val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
+        val tvMenuPesan: TextView = view.findViewById(R.id.tv_menu_pesan)
+        val tvReviewText: TextView = view.findViewById(R.id.tv_review_text)
+        val tvReviewerName: TextView = view.findViewById(R.id.tv_reviewer_name)
+        val imgReviewer: ImageView = view.findViewById(R.id.iv_reviewer)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UlasanViewHolder {
@@ -27,16 +26,14 @@ class UlasanAdapter(private val ulasanList: List<Ulasan>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: UlasanViewHolder, position: Int) {
-        val ulasan = ulasanList[position]
-        // Bind data ke view
-        holder.title.text = ulasan.title
-        holder.subtitle.text = ulasan.subtitle
-        holder.reviewText.text = ulasan.reviewText
-        holder.reviewerName.text = ulasan.reviewerName
-        holder.antriInfo.text = ulasan.antriInfo
+        val ulasan = items[position]
+        holder.imgResto.setImageResource(ulasan.imgResto)
+        holder.tvNamaResto.text = ulasan.namaResto
+        holder.tvMenuPesan.text = ulasan.menuPesan
+        holder.tvReviewText.text = ulasan.reviewText
+        holder.tvReviewerName.text = ulasan.reviewerName
+        holder.imgReviewer.setImageResource(ulasan.imgReviewer)
     }
 
-    override fun getItemCount(): Int {
-        return ulasanList.size
-    }
+    override fun getItemCount() = items.size
 }

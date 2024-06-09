@@ -3,15 +3,19 @@ package com.dicoding.chownow.ui.dashboard
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.Resto
 
-class RestoAdapter(private val items: List<Resto>) : RecyclerView.Adapter<RestoAdapter.RestoViewHolder>() {
+class RestoRekomendasiAdapter(private val items: List<Resto>) : RecyclerView.Adapter<RestoRekomendasiAdapter.RestoViewHolder>() {
 
     class RestoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imgResto: ImageView = view.findViewById(R.id.img_resto)
         val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
+        val tvJarak: TextView = view.findViewById(R.id.tv_jarak)
+        val tvRating: TextView = view.findViewById(R.id.tv_rating)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestoViewHolder {
@@ -20,7 +24,12 @@ class RestoAdapter(private val items: List<Resto>) : RecyclerView.Adapter<RestoA
     }
 
     override fun onBindViewHolder(holder: RestoViewHolder, position: Int) {
-        holder.tvNamaResto.text = items[position].toString()
+        val resto = items[position]
+        holder.imgResto.setImageResource(resto.imgResto)
+        holder.tvNamaResto.text = resto.namaResto
+        val context = holder.itemView.context
+        holder.tvJarak.text = context.getString(R.string.distance_format, resto.jarak)
+        holder.tvRating.text = resto.rating.toString()
     }
 
     override fun getItemCount() = items.size

@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.chownow.R
+import com.dicoding.chownow.data.model.HistoryOrder
 import com.dicoding.chownow.databinding.FragmentHistoryBinding
+import java.util.Date
 
 class HistoryFragment : Fragment() {
 
@@ -36,6 +39,38 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
+
+        val recyclerViewOrderSaatIni: RecyclerView = binding.rvPesananSaatIni
+        recyclerViewOrderSaatIni.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewOrderSaatIni.isNestedScrollingEnabled = false
+
+        val recyclerViewOrderSudahSelesai: RecyclerView = binding.rvPesananSelesai
+        recyclerViewOrderSudahSelesai.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewOrderSudahSelesai.isNestedScrollingEnabled = false
+
+        // Siapkan data HistoryOrder saat ini
+        val historyOrderListSaatIni = listOf(
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 1", 3, Date(), false),
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 2", 2, Date(), false),
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 3", 4, Date(), false)
+            // Tambahkan lebih banyak data sesuai kebutuhan
+        )
+
+        // Siapkan data HistoryOrder sudah selesai
+        val historyOrderListSudahSelesai = listOf(
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 1", 3, Date(), true),
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 2", 2, Date(), true),
+            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 3", 4, Date(), true)
+            // Tambahkan lebih banyak data sesuai kebutuhan
+        )
+
+        // Atur adapter untuk HistoryOrder saat ini
+        val adapterHistorySaatIni = HistoryOrderAdapter(historyOrderListSaatIni)
+        recyclerViewOrderSaatIni.adapter = adapterHistorySaatIni
+
+        // Atur adapter untuk HistoryOrder sudah selesai
+        val adapterHistorySudahSelesai = HistoryOrderAdapter(historyOrderListSudahSelesai)
+        recyclerViewOrderSudahSelesai.adapter = adapterHistorySudahSelesai
     }
 
     private fun setupView() {

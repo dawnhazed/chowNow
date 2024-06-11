@@ -6,14 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
+    app:cardElevation="1dp"
     android:background="@android:color/holo_orange_light">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="@color/orange_primary">
+        android:background="@color/orange_secondary">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_resto"

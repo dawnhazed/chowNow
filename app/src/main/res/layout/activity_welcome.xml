@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/welcome" />
 
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/tv_status_pesanan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_status_pesanan" />
 
     <Button
         android:id="@+id/loginButton"

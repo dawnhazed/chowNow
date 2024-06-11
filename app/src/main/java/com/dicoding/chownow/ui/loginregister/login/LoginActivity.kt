@@ -3,11 +3,13 @@ package com.dicoding.chownow.ui.loginregister.login
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.InputType
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.SpannedString
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.view.MotionEvent
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -49,8 +51,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.loginButton.setOnClickListener {
-            val email = binding.emailEditTextLayout.text.toString()
+        binding.btnLogin.setOnClickListener {
+            val email = binding.tvEmailValue.text.toString()
             /* viewModel.saveSession(UserModel(email, "sample_token"))
             AlertDialog.Builder(this).apply {
                 setTitle("Yeah!")

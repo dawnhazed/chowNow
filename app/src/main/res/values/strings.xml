@@ -85,5 +85,6 @@
     <string name="time_format">%d menit</string>
 
     <string name="rating_scale">%.1f/5.0</string>
+    <string name="tv_nama_restoran">Nama Restoran</string>
 
 </resources>

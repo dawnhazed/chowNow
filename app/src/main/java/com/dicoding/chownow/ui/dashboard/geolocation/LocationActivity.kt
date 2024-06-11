@@ -19,13 +19,6 @@ class LocationActivity : AppCompatActivity() {
         binding = ActivityLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
         val locationHistory = listOf(
             Location("Nama Lokasi", "Jl. Nama Jalan Nomor Rumah , Kelurahan, Kecamatan, Nama Kota, Kode Pos"),
             Location("Nama Lokasi", "Jl. Nama Jalan Nomor Rumah , Kelurahan, Kecamatan, Nama Kota, Kode Pos"),

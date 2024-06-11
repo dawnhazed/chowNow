@@ -83,6 +83,21 @@
                     app:layout_constraintTop_toBottomOf="@id/lokasi_aktif"
                     app:layout_constraintStart_toStartOf="parent"/>
 
+<!--                <Button-->
+<!--                    android:id="@+id/btn_edit_lokasi"-->
+<!--                    android:layout_width="128dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:text="Edit Lokasi"-->
+<!--                    android:fontFamily="@font/poppins_semibold"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    android:backgroundTint="@color/orange_primary"-->
+<!--                    android:background="@drawable/roundedbutton"-->
+<!--                    />-->
+
                 <Button
                     android:id="@+id/btn_edit_lokasi"
                     android:layout_width="128dp"
@@ -94,9 +109,9 @@
                     android:textAllCaps="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:backgroundTint="@color/orange_primary"
-                    android:background="@drawable/roundedbutton"
+                    android:background="@drawable/rounded_orange_prim_bg"
                     />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,7 +126,7 @@
                     android:id="@+id/tv_status_pesanan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/poppins_semibold"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -155,7 +170,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginStart="4dp"
                     android:fontFamily="@font/poppins"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="12sp"
                     android:text="Restoran Padang Sederhana"
                     app:layout_constraintStart_toEndOf="@id/iv_food_bank"
@@ -176,7 +191,7 @@
                     android:id="@+id/tv_estimasi_waktu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/poppins_semibold"
                     android:textSize="14sp"
                     android:text="Estimasi Waktu"
@@ -189,7 +204,7 @@
                     android:layout_height="38dp"
                     android:layout_marginTop="13dp"
                     android:layout_marginStart="16dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="35sp"
                     android:textStyle="bold"
                     android:text="7m"
@@ -235,7 +250,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:background="@drawable/rounded_orange_sec_bg">
+                >
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_resto_rekomendasi"
@@ -268,7 +283,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
-                android:background="@drawable/rounded_orange_sec_bg">
+                >
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_ulasan"

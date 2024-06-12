@@ -7,7 +7,7 @@
     tools:context=".ui.dashboard.resto.detail.DetailReviewFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_pesanan_selesai"
+        android:id="@+id/rv_detail_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -16,8 +16,6 @@
         android:clipToPadding="false"
         android:padding="0dp"
         app:layout_behavior="@string/material_motion_easing_linear"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_rekomendasi_untuk_kamu"
         tools:listitem="@layout/item_detail_review">
 
     </androidx.recyclerview.widget.RecyclerView>

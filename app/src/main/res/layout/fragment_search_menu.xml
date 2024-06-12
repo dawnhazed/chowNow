@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.resto.detail.DetailMenuFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.search.SearchMenuFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_detail_menu"
+        android:id="@+id/rv_menu_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:clipToPadding="false"
         android:padding="0dp"
         app:layout_behavior="@string/material_motion_easing_linear"
-        tools:listitem="@layout/item_food">
+        tools:listitem="@layout/item_menu">
 
     </androidx.recyclerview.widget.RecyclerView>
 

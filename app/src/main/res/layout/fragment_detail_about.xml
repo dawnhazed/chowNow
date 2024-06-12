@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.dashboard.resto.detail.DetailAboutFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +30,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline">
 
             <TextView
-                android:id="@+id/text_title_left1"
+                android:id="@+id/tv_pendiri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -38,7 +39,7 @@
                 android:text="@string/didirikan" />
 
             <TextView
-                android:id="@+id/text_about_left1"
+                android:id="@+id/tv_pendiri_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
@@ -47,7 +48,7 @@
                 android:text="@string/keterangan" />
 
             <TextView
-                android:id="@+id/text_title_left2"
+                android:id="@+id/tv_jenis_kuliner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -57,7 +58,7 @@
                 android:text="@string/jenis" />
 
             <TextView
-                android:id="@+id/text_about_left2"
+                android:id="@+id/tv_jenis_kuliner_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
@@ -72,13 +73,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline"
             app:layout_constraintEnd_toEndOf="parent" >
 
             <TextView
-                android:id="@+id/text_title_right1"
+                android:id="@+id/tv_waktu_didirikan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -87,7 +87,7 @@
                 android:text="@string/sejak" />
 
             <TextView
-                android:id="@+id/text_about_right1"
+                android:id="@+id/tv_waktu_didirikan_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
@@ -96,7 +96,7 @@
                 android:text="@string/keterangan" />
 
             <TextView
-                android:id="@+id/text_title_right2"
+                android:id="@+id/tv_quantity_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -106,7 +106,7 @@
                 android:text="@string/dijual" />
 
             <TextView
-                android:id="@+id/text_about_right2"
+                android:id="@+id/tv_quantity_total_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"

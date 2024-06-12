@@ -71,21 +71,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_riwayat_pemesanan" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_resto_search"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:clipToPadding="false"
-            android:padding="0dp"
-            app:layout_behavior="@string/material_motion_easing_linear"
+            android:background="@drawable/rounded_orange_prim_bg"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_pesanan_saat_ini"
-            tools:listitem="@layout/item_resto">
+            app:layout_constraintTop_toBottomOf="@+id/tv_pesanan_saat_ini"
+            app:tabIndicator="@drawable/rounded_orange_sec_bg"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="@color/orange_secondary"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="7dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabTextColor="@color/black" />
 
-        </androidx.recyclerview.widget.RecyclerView>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

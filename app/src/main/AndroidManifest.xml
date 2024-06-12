@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -23,10 +24,7 @@
             android:label="@string/app_name"
             android:theme="@style/Base.Theme.ChowNow">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
 
@@ -35,11 +33,6 @@
             android:exported="true"
             android:theme="@style/Base.Theme.ChowNow" >
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-
         </activity>
 
         <activity
@@ -47,10 +40,12 @@
             android:exported="true"
             android:theme="@style/Base.Theme.ChowNow" >
 
-<!--                <intent-filter>-->
-<!--                    <action android:name="android.intent.action.MAIN" />-->
-<!--                    <category android:name="android.intent.category.LAUNCHER" />-->
-<!--                </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".ui.dashboard.resto.detail.RestoDetailActivity"
+            android:exported="true"
+            android:theme="@style/Base.Theme.ChowNow" >
 
         </activity>
 
@@ -59,10 +54,10 @@
             android:exported="true"
             android:theme="@style/Base.Theme.ChowNow" >
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -75,11 +70,6 @@
             android:name=".ui.dashboard.DashboardActivity"
             android:exported="true"
             android:theme="@style/Base.Theme.ChowNow" >
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
 
         </activity>
 

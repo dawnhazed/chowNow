@@ -53,7 +53,7 @@
     <string name="didirikan">Didirikan oleh:</string>
     <string name="jenis">Jenis Kuliner:</string>
     <string name="sejak">Didirikan sejak:</string>
-    <string name="dijual">Menu yang dijual:</string>
+    <string name="dijual">Jumlah menu:</string>
     <string name="keterangan">Keterangan</string>
     <string name="item_count">1 item</string>
     <string name="harga">100.000</string>
@@ -81,10 +81,16 @@
     <string name="distance_format">%d meter</string>
 
     <string name="distance_format_km_info">%.2f km dari Anda</string>
-
+    <string name="price_format">Rp. %s</string>
     <string name="time_format">%d menit</string>
 
     <string name="rating_scale">%.1f/5.0</string>
     <string name="tv_nama_restoran">Nama Restoran</string>
+    <string name="tab_text_1">Menu</string>
+    <string name="tab_text_2">Review</string>
+    <string name="tab_text_3">About</string>
+
+    <string name="content_tab_text">This is Tab %1$d</string>
+
 
 </resources>

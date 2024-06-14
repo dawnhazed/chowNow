@@ -69,13 +69,13 @@
     <string name="nomor_detail"># 123</string>
     <string name="total">Total: Rp23.000</string>
 
-    <string name="status1">Status 1</string>
+    <string name="status1">Pesanan Anda sudah selesai</string>
     <string name="status1_detail">Detail Status 1</string>
-    <string name="status2">Status 2</string>
+    <string name="status2">Pesanan sedang disiapkan</string>
     <string name="status2_detail">Detail Status 2</string>
-    <string name="status3">Status 3</string>
+    <string name="status3">Pesanan Anda sudah diterima</string>
     <string name="status3_detail">Detail Status 3</string>
-    <string name="status4">Status 4</string>
+    <string name="status4">Pesanan sedang diproses</string>
     <string name="status4_detail">Detail Status 4</string>
 
     <string name="distance_format">%d meter</string>

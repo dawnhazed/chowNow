@@ -38,6 +38,20 @@
                 android:background="@drawable/rounded_orange_sec_bg">
 
                 <TextView
+                    android:id="@+id/tv_lokasi_saat_ini_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Jakarta"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_lokasi"
+                    app:layout_constraintStart_toEndOf="@+id/iv_lokasi"
+                    app:layout_constraintTop_toTopOf="@+id/iv_lokasi" />
+
+                <TextView
                     android:id="@+id/tv_lokasi_saat_ini"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp"
@@ -58,59 +72,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
 
-                <TextView
-                    android:id="@+id/lokasi_aktif"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginStart="4dp"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins"
-                    android:text="@string/lokasi_aktif"
-                    app:layout_constraintStart_toEndOf="@id/iv_lokasi"
-                    app:layout_constraintTop_toBottomOf="@id/tv_lokasi_saat_ini"/>
-
-                <TextView
-                    android:id="@+id/tv_detail_lokasi"
-                    android:layout_width="340dp"
-                    android:layout_height="16dp"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/poppins"
-                    android:text="@string/detail_lokasi"
-                    app:layout_constraintTop_toBottomOf="@id/lokasi_aktif"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_edit_lokasi"-->
-<!--                    android:layout_width="128dp"-->
-<!--                    android:layout_height="36dp"-->
-<!--                    android:text="Edit Lokasi"-->
-<!--                    android:fontFamily="@font/poppins_semibold"-->
-<!--                    android:textSize="12sp"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textAllCaps="false"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    android:backgroundTint="@color/orange_primary"-->
-<!--                    android:background="@drawable/roundedbutton"-->
-<!--                    />-->
-
                 <Button
                     android:id="@+id/btn_edit_lokasi"
                     android:layout_width="128dp"
                     android:layout_height="36dp"
-                    android:text="Edit Lokasi"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:background="@drawable/rounded_orange_prim_bg"
-                    />
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Edit Lokasi"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

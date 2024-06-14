@@ -74,8 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="
-        @string/tv_nama_restoran"
+        android:text="@string/tv_nama_restoran"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:padding="2dp"
@@ -174,7 +173,7 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/total_text"
-            tools:listitem="@layout/item_food"/>
+            tools:listitem="@layout/item_food_ordered"/>
 
         <TextView
             android:id="@+id/total_text"
@@ -184,7 +183,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="@string/total"
+            android:text="@string/price_format"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"

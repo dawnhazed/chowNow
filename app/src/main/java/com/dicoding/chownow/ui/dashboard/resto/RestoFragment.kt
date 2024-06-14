@@ -40,9 +40,9 @@ class RestoFragment : Fragment() {
         // Siapkan data Resto
         val restaurants = listOf(
             //ListResto(R.drawable.breakfast, "Nama Restoran 1", 2.32f, 7, 4.5f)
-            ListResto(R.drawable.breakfast, "Nama Restoran 1", 2.32f, 3, 4.0f),
-            ListResto(R.drawable.breakfast, "Nama Restoran 2", 2.41f, 4, 4.5f),
-            ListResto(R.drawable.breakfast, "Nama Restoran 3", 3.02f, 6, 4.9f),
+            ListResto(R.drawable.breakfast, "Nama Restoran 1", 4.0f),
+            ListResto(R.drawable.breakfast, "Nama Restoran 2", 4.5f),
+            ListResto(R.drawable.breakfast, "Nama Restoran 3", 4.9f),
             // Tambahkan lebih banyak restoran sesuai kebutuhan
         )
 

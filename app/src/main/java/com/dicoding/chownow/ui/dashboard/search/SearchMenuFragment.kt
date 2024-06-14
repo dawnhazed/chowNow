@@ -32,9 +32,9 @@ class SearchMenuFragment : Fragment() {
 
         // Siapkan data Menu
         val menus = listOf(
-            ListMenu(R.drawable.breakfast, "Nama Menu 1", 2.32f, 3, 4.0f),
-            ListMenu(R.drawable.breakfast, "Nama Menu 2", 2.41f, 4, 4.5f),
-            ListMenu(R.drawable.breakfast, "Nama Menu 3", 3.02f, 6, 4.9f)
+            ListMenu(R.drawable.breakfast, "Nama Menu 1", 4.0f),
+            ListMenu(R.drawable.breakfast, "Nama Menu 2", 4.5f),
+            ListMenu(R.drawable.breakfast, "Nama Menu 3", 4.9f)
         )
 
         // Atur adapter untuk Menu

@@ -7,8 +7,8 @@ import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.Location
 import com.dicoding.chownow.databinding.ItemLocationBinding
 
-class LocationHistoryAdapter(private val locationHistory: List<Location>) :
-    RecyclerView.Adapter<LocationHistoryAdapter.LocationViewHolder>() {
+class LocationAdapter(private val location: List<Location>) :
+    RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
 
     class LocationViewHolder(val binding: ItemLocationBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -18,13 +18,11 @@ class LocationHistoryAdapter(private val locationHistory: List<Location>) :
     }
 
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
-        val location = locationHistory[position]
+        val location = location[position]
         with(holder.binding) {
-            tvLocationName.text = location.name
-            tvLocationAddress.text = location.address
-            ivLocationIcon.setImageResource(R.drawable.location_on) // Replace with your location icon
+            tvNamaLokasi.text = location.namaLokasi
         }
     }
 
-    override fun getItemCount() = locationHistory.size
+    override fun getItemCount() = location.size
 }

@@ -4,132 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.dashboard.geolocation.LocationActivity">
 
     <ImageView
-        android:id="@+id/back_icon"
+        android:id="@+id/iv_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/back_arrow" />
 
-    <EditText
-        android:id="@+id/et_search_location"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:hint="Cari Lokasi"
-        android:drawableEnd="@drawable/ic_search"
-        android:background="@drawable/roundedtextbox"
-        android:drawablePadding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_icon" />
-
-    <ImageView
-        android:id="@+id/iv_geolocation"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_margin="16dp"
-        android:background="@android:color/darker_gray"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_search_location" />
-
     <TextView
-        android:id="@+id/tv_current_location"
+        android:id="@+id/tv_lokasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Lokasi Sekarang"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_bold"
-        android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textColor="@color/black"
+        android:text="Pilih Lokasi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_geolocation" />
-
-    <LinearLayout
-        android:id="@+id/ll_current_location"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_current_location">
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:contentDescription="@string/location_icon"
-            android:background="@drawable/circle_light_orange"
-            android:src="@drawable/ic_my_location" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:text="Nama Lokasi" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                android:text="Jl. Nama Jalan Nomor Rumah , Kelurahan, Kecamatan, Nama Kota, Kode Pos" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_location_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Riwayat Lokasi"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_current_location" />
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_location_history"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_location_history"
-        tools:listitem="@layout/item_location"/>
+        android:id="@+id/rv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:padding="0dp"
+        app:layout_behavior="@string/material_motion_easing_linear"
+        app:layout_constraintTop_toBottomOf="@id/tv_lokasi"
+        tools:listitem="@layout/item_location">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -14,7 +14,6 @@ class RestoRekomendasiAdapter(private val items: List<Resto>) : RecyclerView.Ada
     class RestoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgResto: ImageView = view.findViewById(R.id.img_resto)
         val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
-        val tvJarak: TextView = view.findViewById(R.id.tv_jarak)
         val tvRating: TextView = view.findViewById(R.id.tv_rating)
     }
 
@@ -28,7 +27,6 @@ class RestoRekomendasiAdapter(private val items: List<Resto>) : RecyclerView.Ada
         holder.imgResto.setImageResource(resto.imgResto)
         holder.tvNamaResto.text = resto.namaResto
         val context = holder.itemView.context
-        holder.tvJarak.text = context.getString(R.string.distance_format, resto.jarak)
         holder.tvRating.text = resto.rating.toString()
     }
 

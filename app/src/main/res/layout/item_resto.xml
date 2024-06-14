@@ -34,43 +34,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Nama Restoran"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/poppins_semibold"
+            android:text="Nama Restoran"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_estimate_reach_distance"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/poppins"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:text="@string/distance_format_km_info"
-            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/iv_resto"
-            app:layout_constraintEnd_toStartOf="@id/tv_estimate_reach_time"
-            app:layout_constraintHorizontal_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_estimate_reach_time"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/poppins"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:text="@string/time_format"
-            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
-            app:layout_constraintStart_toEndOf="@id/tv_estimate_reach_distance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" />
+            app:layout_constraintTop_toTopOf="@+id/iv_resto" />
 
         <RatingBar
             android:id="@+id/rating_bar"
@@ -78,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
             android:numStars="5"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_resto"
             app:layout_constraintStart_toEndOf="@id/iv_resto"
-            app:layout_constraintTop_toBottomOf="@id/tv_estimate_reach_distance" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_resto" />
 
         <TextView
             android:id="@+id/tv_rating_scale"

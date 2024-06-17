@@ -169,11 +169,14 @@
         app:layout_constraintTop_toBottomOf="@id/section_top" >
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_status"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/total_text"
-            tools:listitem="@layout/item_food_ordered"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp"
+            tools:listitem="@layout/item_food_ordered" />
 
         <TextView
             android:id="@+id/total_text"
@@ -190,7 +193,8 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
+    <!--
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/status_log"
         android:layout_width="wrap_content"
@@ -421,7 +425,83 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+        app:layout_constraintTop_toBottomOf="@id/rating_bar" /> -->
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_orange_prim_bg"
+        app:layout_constraintTop_toBottomOf="@id/section_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Status Order"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Sedang Disiapkan"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/status_bar">
+
+        <TextView
+            android:id="@+id/tv_title_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Berikan Review"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:numStars="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_review"/>
+
+        <EditText
+            android:id="@+id/et_review"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:drawableEnd="@drawable/ic_send"
+            android:inputType="text"
+            android:paddingLeft="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/rounded_grey"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

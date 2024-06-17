@@ -29,9 +29,9 @@ class ConfirmOrderAdapter (private val items: List<FoodMenu>) : RecyclerView.Ada
     override fun onBindViewHolder(holder: ConfirmOrderViewHolder, position: Int) {
         val menu = items[position]
         holder.imgMenu.setImageResource(menu.imgMenu)
-        holder.tvNamaMenu.text = menu.namaMenu
+        holder.tvNamaMenu.text = menu.namaMakanan
         val context = holder.itemView.context
-        holder.tvRatingScale.text = context.getString(R.string.rating_scale, menu.ratingScale)
+        // holder.tvRatingScale.text = context.getString(R.string.rating_scale, menu.)
     }
 
     override fun getItemCount() = items.size

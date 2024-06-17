@@ -57,11 +57,12 @@
             app:layout_constraintStart_toEndOf="@id/iv_menu"/>
 
         <Button
-            android:id="@+id/btn_increase"
+            android:id="@+id/btn_decrease"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/ic_add"
+            android:background="@drawable/ic_minus"
+            android:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/tv_quantity"
             app:layout_constraintEnd_toStartOf="@+id/tv_quantity"
             app:layout_constraintTop_toTopOf="@+id/tv_quantity"/>
@@ -79,11 +80,12 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <Button
-            android:id="@+id/btn_decrease"
+            android:id="@+id/btn_increase"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:background="@drawable/ic_minus"
+            android:background="@drawable/ic_add"
             android:layout_marginEnd="2dp"
+            android:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_quantity"
             app:layout_constraintEnd_toEndOf="parent"/>

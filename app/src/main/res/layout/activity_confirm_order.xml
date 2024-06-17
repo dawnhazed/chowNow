@@ -219,6 +219,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:textAllCaps="false"
+            android:gravity="center"
             android:backgroundTint="@color/orange_primary"
             android:fontFamily="@font/poppins_semibold"
             android:background="@drawable/roundedbutton"

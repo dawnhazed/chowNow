@@ -40,6 +40,11 @@
             android:exported="true"
             android:theme="@style/Base.Theme.ChowNow" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
 
         <activity
@@ -52,19 +57,13 @@
         <activity
             android:name=".ui.dashboard.geolocation.LocationActivity"
             android:exported="true"
-            android:theme="@style/Base.Theme.ChowNow" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:theme="@style/Base.Theme.ChowNow" />
 
         <activity
             android:name=".ui.dashboard.resto.confirm.ConfirmOrderActivity"
             android:exported="true"
-            android:theme="@style/Base.Theme.ChowNow" />
+            android:theme="@style/Base.Theme.ChowNow" >
+        </activity>
 
         <activity
             android:name=".ui.dashboard.DashboardActivity"

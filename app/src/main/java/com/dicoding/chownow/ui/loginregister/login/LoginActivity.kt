@@ -85,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
         val isPasswordFilled = binding.tvPasswordValue.text.length >= 8
 
         binding.btnLogin.isEnabled = isEmailFilled && isPasswordFilled
+        binding.tvPasswordWarning.visibility = if (isPasswordFilled) View.GONE else View.VISIBLE
     }
 
     private fun setupView() {

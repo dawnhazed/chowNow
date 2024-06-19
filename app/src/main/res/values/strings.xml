@@ -16,6 +16,10 @@
     <string name="nama">Nama</string>
     <string name="username">Username</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="password_warning">Password minimal 8 karakter</string>
+    <string name="confirm_password_warning">Konfirmasi password tidak cocok</string>
+
+
 
     <!-- dashboard -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

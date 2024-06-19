@@ -76,6 +76,8 @@ class RegisterActivity : AppCompatActivity() {
         val isPasswordMatch = binding.tvPasswordValue.text.toString() == binding.tvConfirmPasswordValue.text.toString()
 
         binding.btnRegister.isEnabled = isNamaFilled && isUsernameFilled && isEmailFilled && isPasswordFilled && isConfirmPasswordFilled && isPasswordMatch
+        binding.tvPasswordWarning.visibility = if (isPasswordFilled) View.GONE else View.VISIBLE
+        binding.tvConfirmPasswordWarning.visibility = if (isPasswordMatch) View.GONE else View.VISIBLE
     }
 
     private fun setupView() {

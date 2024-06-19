@@ -95,6 +95,7 @@
     <string name="tab_text_3">About</string>
 
     <string name="content_tab_text">This is Tab %1$d</string>
+    <string name="logout">Keluar</string>
 
 
 </resources>

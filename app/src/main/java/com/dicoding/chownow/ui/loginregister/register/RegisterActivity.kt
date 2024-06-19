@@ -9,6 +9,7 @@ import android.text.Spanned
 import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -39,6 +40,24 @@ class RegisterActivity : AppCompatActivity() {
         setupAction()
         clickable()
         updateSignupButtonEnabledState()
+
+        viewModel.registerResult.observe(this) { response ->
+            showLoading(false)
+            response?.let {
+                if (it.message != null) {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    showDialogue(it.error ?: "Terjadi kesalahan, mohon coba lagi")
+                    Log.d("register activity", "register error")
+                }
+            } ?: run {
+                showDialogue("Terjadi kesalahan, mohon coba lagi")
+                Log.d("register activity", "register error")
+            }
+        }
+
     }
 
     private fun setupAction() {
@@ -48,22 +67,28 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.tvEmailValue.text.toString()
             val password = binding.tvPasswordValue.text.toString()
 
+            showLoading(true)
+            viewModel.registerUser(name, username, email, password)
+            showLoading(false)
+//
+//            Log.d("register button", "Register Button Clicked!")
+
             // Panggil ViewModel untuk register
-            viewModel.performRegister(name, username, email, password) { success ->
-                if (success) {
-                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    AlertDialog.Builder(this).apply {
-                        setTitle("Oops!")
-                        setMessage("Registrasi gagal. Silakan coba lagi.")
-                        setPositiveButton("OK", null)
-                        create()
-                        show()
-                    }
-                }
-            }
+//            viewModel.performRegister(name, username, email, password) { success ->
+//                if (success) {
+//                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
+//                } else {
+//                    AlertDialog.Builder(this).apply {
+//                        setTitle("Oops!")
+//                        setMessage("Registrasi gagal. Silakan coba lagi.")
+//                        setPositiveButton("OK", null)
+//                        create()
+//                        show()
+//                    }
+//                }
+//            }
         }
     }
 
@@ -132,5 +157,19 @@ class RegisterActivity : AppCompatActivity() {
         spanString.setSpan(daftarText, 18, 23, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         textView.text = spanString
         textView.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun showDialogue(message: String) {
+        AlertDialog.Builder(this).apply {
+            setTitle("Registrasi Gagal")
+            setMessage(message)
+            setPositiveButton("OK") { _, _ -> }
+            create()
+            show()
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }

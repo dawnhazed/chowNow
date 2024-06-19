@@ -1,5 +1,6 @@
 package com.dicoding.chownow.ui.dashboard.profile
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,17 +9,18 @@ import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.chownow.databinding.FragmentProfileBinding
+import com.dicoding.chownow.ui.loginregister.WelcomeActivity
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // Property ini hanya valid antara onCreateView dan onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,16 +28,27 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
+
+        binding.buttonLogout.setOnClickListener {
+            val sharedPreferences = requireContext().getSharedPreferences("prefs", AppCompatActivity.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.clear()
+            editor.apply()
+
+            val intent = Intent(requireContext(), WelcomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            requireActivity().finish()
+
+            Toast.makeText(requireContext(), "Logout berhasil", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setupView() {

@@ -30,6 +30,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.d("DashboardActivity", "Inflating layout")
         enableEdgeToEdge()
+        supportActionBar?.hide()
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)

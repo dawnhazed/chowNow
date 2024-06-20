@@ -128,12 +128,16 @@ class LoginActivity : AppCompatActivity() {
             if (response?.token != null) {
                 val email = binding.tvEmailValue.text.toString()
                 val token = response.token
+                saveToken(token)
+                Log.d("observe viewmodel", "token = $token")
                 lifecycleScope.launch {
                     pref.saveSession(UserModel(email, token, true))
+                    Log.d("lifecycle scope", "token = $token")
                     showDialogue("Anda berhasil login.")
                 }
             } else {
                 Toast.makeText(this, "Email atau Password salah", Toast.LENGTH_SHORT).show()
+                showLoading(false)
             }
         }
     }
@@ -156,5 +160,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun saveToken(token: String) {
+        val sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("token", token)
+        editor.apply()
     }
 }

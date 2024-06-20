@@ -20,7 +20,6 @@
     <string name="confirm_password_warning">Konfirmasi password tidak cocok</string>
 
 
-
     <!-- dashboard -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -38,7 +37,7 @@
     <string name="detail_lokasi">Jl. Sukamaju, Kelurahan Pantang Mundur, Jakarta Pusat</string>
     <string name="status_pesanan_kamu">Status Pesanan Kamu</string>
     <string name="rekomendasi_untuk_kamu">Rekomendasi untuk Kamu</string>
-    <string name="lihat_lebih">Lihat lebih</string>
+    <string name="lihat_lebih"><u>Lihat lebih</u></string>
 
     <string name="konfirmasi_pesanan">Konfirmasi Pesanan</string>
     <string name="date_confirm_order">Selasa, 8 Mei 2024 09:30</string>
@@ -61,7 +60,7 @@
     <string name="keterangan">Keterangan</string>
     <string name="item_count">1 item</string>
     <string name="harga">100.000</string>
-    
+
     <!--status pesanan-->
     <string name="status_pesanan">Status Pesanan</string>
     <string name="tanggal">Selasa, 8 Mei 2024</string>
@@ -95,7 +94,7 @@
     <string name="tab_text_3">About</string>
 
     <string name="content_tab_text">This is Tab %1$d</string>
-    <string name="logout">Keluar</string>
+    <string name="logout"><u>Keluar</u></string>
 
 
 </resources>

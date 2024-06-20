@@ -49,22 +49,21 @@
                 android:layout_marginTop="8dp"
                 android:text="Nama"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_bold"
                 app:layout_constraintBottom_toTopOf="@+id/edittext_name"
                 app:layout_constraintEnd_toEndOf="@+id/image_profile" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edittext_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
-                android:editable="false"
-                android:hint="Name"
+                android:text="Nama User"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins_semibold"
-                android:inputType="textPersonName" />
+                android:fontFamily="@font/poppins_semibold" />
+
         </LinearLayout>
 
 
@@ -88,53 +87,38 @@
                 android:layout_marginTop="8dp"
                 android:text="Email"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_bold"
                 app:layout_constraintBottom_toTopOf="@+id/edittext_name"
                 app:layout_constraintEnd_toEndOf="@+id/image_profile" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edittext_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
-                android:editable="false"
-                android:hint="Email"
+                android:text="Email"
                 android:textColor="@color/black"
                 android:fontFamily="@font/poppins_semibold"
-
                 android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
-
-        <Button
-            android:id="@+id/button_edit_profile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/edit_profile"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_email" />
-
-        <Button
+        <TextView
             android:id="@+id/button_logout"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/logout"
             android:textAllCaps="false"
             android:textColor="@color/red"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_edit_profile" />
-
+            app:layout_constraintTop_toBottomOf="@id/layout_email"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

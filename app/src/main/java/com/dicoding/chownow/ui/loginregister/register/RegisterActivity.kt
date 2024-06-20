@@ -21,11 +21,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.chownow.R
 import com.dicoding.chownow.databinding.ActivityRegisterBinding
+import com.dicoding.chownow.ui.ViewModelFactory
 import com.dicoding.chownow.ui.loginregister.login.LoginActivity
+import com.dicoding.chownow.ui.loginregister.login.LoginViewModel
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val viewModel: RegisterViewModel by viewModels()
+    private val viewModel by viewModels<RegisterViewModel> { ViewModelFactory.getInstance(this) }
     private lateinit var binding: ActivityRegisterBinding
 
     private var isPasswordValid = false

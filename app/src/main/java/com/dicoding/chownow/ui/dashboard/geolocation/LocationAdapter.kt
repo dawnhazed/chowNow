@@ -7,7 +7,7 @@ import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.Location
 import com.dicoding.chownow.databinding.ItemLocationBinding
 
-class LocationAdapter(private val location: List<Location>) :
+class LocationAdapter(private val location: List<Location>, private val onLocationClick: (Location) -> Unit) :
     RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
 
     class LocationViewHolder(val binding: ItemLocationBinding) : RecyclerView.ViewHolder(binding.root)
@@ -21,6 +21,7 @@ class LocationAdapter(private val location: List<Location>) :
         val location = location[position]
         with(holder.binding) {
             tvNamaLokasi.text = location.namaLokasi
+            root.setOnClickListener { onLocationClick(location) }
         }
     }
 

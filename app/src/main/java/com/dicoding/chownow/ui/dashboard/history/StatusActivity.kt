@@ -39,6 +39,7 @@ class StatusActivity : AppCompatActivity() {
         binding.rvStatus.adapter = adapter
 
         setupView()
+        updateTotals()
     }
 
     private fun setupView() {
@@ -57,5 +58,10 @@ class StatusActivity : AppCompatActivity() {
     private fun backIntent(){
         val intent = Intent(this, HistoryFragment::class.java)
         startActivity(intent)
+    }
+
+    private fun updateTotals(){
+        val totalPrice = foodItems.sumOf { it.quantity * it.price }
+        binding.totalText.text = "Rp$totalPrice"
     }
 }

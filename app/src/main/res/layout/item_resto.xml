@@ -22,6 +22,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
             android:contentDescription="@string/restaurant_image"
             android:src="@drawable/food_example"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,28 +32,30 @@
 
         <TextView
             android:id="@+id/tv_nama_resto"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Nama Restoran"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:layout_marginBottom="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/iv_resto"
-            app:layout_constraintTop_toTopOf="@+id/iv_resto" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/iv_resto"/>
 
         <RatingBar
             android:id="@+id/rating_bar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
             android:numStars="5"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_resto"
+            android:isIndicator="true"
             app:layout_constraintStart_toEndOf="@id/iv_resto"
             app:layout_constraintTop_toBottomOf="@+id/tv_nama_resto" />
 
@@ -65,9 +68,8 @@
             android:text="@string/rating_scale"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
-            app:layout_constraintStart_toEndOf="@id/rating_bar"
-            app:layout_constraintTop_toTopOf="@+id/rating_bar" />
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_resto"
+            app:layout_constraintStart_toEndOf="@id/rating_bar" />
 
 <!--        <View-->
 <!--            android:id="@+id/circle_button"-->

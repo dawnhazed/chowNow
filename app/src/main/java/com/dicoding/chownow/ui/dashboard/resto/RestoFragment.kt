@@ -1,5 +1,6 @@
 package com.dicoding.chownow.ui.dashboard.resto
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +10,14 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.ListResto
 import com.dicoding.chownow.databinding.FragmentRestoBinding
 import com.dicoding.chownow.ui.dashboard.ListRestoAdapter
+import com.dicoding.chownow.ui.dashboard.geolocation.LocationActivity
 
 class RestoFragment : Fragment() {
 
@@ -49,6 +52,8 @@ class RestoFragment : Fragment() {
         // Atur adapter untuk Resto
         val adapter = ListRestoAdapter(restaurants)
         recyclerView.adapter = adapter
+
+        binding.backIcon.setOnClickListener{ backIntent() }
     }
 
     private fun setupView() {
@@ -62,6 +67,10 @@ class RestoFragment : Fragment() {
             )
         }
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
+    }
+
+    private fun backIntent(){
+        findNavController().navigate(R.id.action_homeFragment_to_restoFragment)
     }
 
     override fun onDestroyView() {

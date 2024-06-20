@@ -1,7 +1,9 @@
 package com.dicoding.chownow.ui.dashboard.home
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,8 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
@@ -17,13 +21,16 @@ import com.dicoding.chownow.data.model.Ulasan
 import com.dicoding.chownow.databinding.FragmentHomeBinding
 import com.dicoding.chownow.ui.dashboard.RestoRekomendasiAdapter
 import com.dicoding.chownow.ui.dashboard.UlasanAdapter
+import com.dicoding.chownow.ui.dashboard.geolocation.LocationActivity
+import com.dicoding.chownow.ui.dashboard.resto.RestoFragment
+import com.dicoding.chownow.ui.loginregister.register.RegisterActivity
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
+    private val viewModel: HomeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +44,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
-
         // Setup RecyclerView Rekomendasi Resto
         val recyclerViewResto: RecyclerView = view.findViewById(R.id.rv_resto_rekomendasi)
         recyclerViewResto.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -82,6 +88,14 @@ class HomeFragment : Fragment() {
         // Atur adapter untuk Ulasan
         val adapterUlasan = UlasanAdapter(reviews)
         recyclerViewUlasan.adapter = adapterUlasan
+
+        binding.btnEditLokasi.setOnClickListener { intentLocation() }
+        binding.tvLihatLebih.setOnClickListener { intentResto() }
+
+        viewModel.selectedLocation.observe(viewLifecycleOwner) { location ->
+            Log.d("DashboardFragment", "Observed location change: $location")
+            binding.tvLokasiSaatIniValue.text = location.toString()
+        }
     }
 
     private fun setupView() {
@@ -100,5 +114,14 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun intentLocation(){
+        val intent = Intent(context, LocationActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun intentResto(){
+        findNavController().navigate(R.id.action_restoFragment_to_homeFragment)
     }
 }

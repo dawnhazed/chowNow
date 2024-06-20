@@ -35,6 +35,9 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var pref: UserPreference
 
+    companion object {
+        const val EMAIL_KEY = "EMAIL"
+    }
 //    private var isPasswordValid = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +64,8 @@ class LoginActivity : AppCompatActivity() {
             viewModel.loginUser(email, password)
 
             Log.d("login button", "Login Button Clicked!")
+
+            Log.d("login activity", "email sent = $email")
         }
     }
 
@@ -147,9 +152,12 @@ class LoginActivity : AppCompatActivity() {
             setTitle("Login")
             setMessage(message)
             setPositiveButton("OK") { _, _ ->
-                val intent = Intent(context, DashboardActivity::class.java)
-                intent.flags =
-                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                val email = binding.tvEmailValue.text.toString()
+                val intent = Intent(context, DashboardActivity::class.java).apply {
+                    putExtra(EMAIL_KEY, email)
+                }
+                Log.d("login activity", "email sent = $email")
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }

@@ -50,17 +50,16 @@ class HistoryFragment : Fragment() {
 
         // Siapkan data HistoryOrder saat ini
         val historyOrderListSaatIni = listOf(
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 1", 3, Date(), false),
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 2", 2, Date(), false),
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 3", 4, Date(), false)
+            HistoryOrder(R.drawable.food_example, "Rumah Makan Nusantara", 3, Date(), false)
             // Tambahkan lebih banyak data sesuai kebutuhan
         )
 
         // Siapkan data HistoryOrder sudah selesai
         val historyOrderListSudahSelesai = listOf(
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 1", 3, Date(), true),
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 2", 2, Date(), true),
-            HistoryOrder(R.drawable.ic_launcher_background, "Nama Restoran 3", 4, Date(), true)
+            HistoryOrder(R.drawable.jco, "JCo", 3, Date(), true),
+            HistoryOrder(R.drawable.burger_king, "Burger King", 2, Date(), true),
+            HistoryOrder(R.drawable.kfc, "KFC", 4, Date(), true),
+            HistoryOrder(R.drawable.mie_gacoan, "Mie Gacoan", 3, Date(), true)
             // Tambahkan lebih banyak data sesuai kebutuhan
         )
 

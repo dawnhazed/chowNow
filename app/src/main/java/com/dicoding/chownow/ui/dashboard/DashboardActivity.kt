@@ -15,6 +15,7 @@ import com.dicoding.chownow.R
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.databinding.ActivityDashboardBinding
+import com.dicoding.chownow.ui.dashboard.profile.ProfileFragment
 import com.dicoding.chownow.ui.loginregister.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.flow.first
@@ -23,14 +24,16 @@ import kotlinx.coroutines.launch
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDashboardBinding
-
     private lateinit var pref: UserPreference
 
+    companion object {
+        const val EMAIL_KEY = "EMAIL"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("DashboardActivity", "Inflating layout")
-        enableEdgeToEdge()
-        supportActionBar?.hide()
+        //enableEdgeToEdge()
+        //supportActionBar?.hide()
 
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -40,6 +43,11 @@ class DashboardActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         pref = UserPreference.getInstance(dataStore)
+
+        val email = intent.getStringExtra(EMAIL_KEY)
+        Log.d("dashboard activity", "email = $email")
+        if (email != null) { saveEmailToPreferences(email) }
+
 
         val navView: BottomNavigationView = binding.navView
 
@@ -66,4 +74,12 @@ class DashboardActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun saveEmailToPreferences(email: String) {
+        val sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString(EMAIL_KEY, email)
+        editor.apply()
+    }
+
 }

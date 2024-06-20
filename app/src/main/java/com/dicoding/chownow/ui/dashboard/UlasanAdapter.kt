@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.Ulasan
+import com.dicoding.chownow.data.remote.response.ReviewResponseItem
 
-class UlasanAdapter(private val items: List<Ulasan>) : RecyclerView.Adapter<UlasanAdapter.UlasanViewHolder>() {
+class UlasanAdapter(private var items: List<ReviewResponseItem?>) : RecyclerView.Adapter<UlasanAdapter.UlasanViewHolder>() {
 
     class UlasanViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgResto: ImageView = view.findViewById(R.id.iv_resto)
@@ -18,6 +20,7 @@ class UlasanAdapter(private val items: List<Ulasan>) : RecyclerView.Adapter<Ulas
         val tvReviewText: TextView = view.findViewById(R.id.tv_review_text)
         val tvReviewerName: TextView = view.findViewById(R.id.tv_reviewer_name)
         val imgReviewer: ImageView = view.findViewById(R.id.iv_reviewer)
+        val tvReviewTime: TextView = view.findViewById(R.id.tv_antri_info)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UlasanViewHolder {
@@ -27,12 +30,22 @@ class UlasanAdapter(private val items: List<Ulasan>) : RecyclerView.Adapter<Ulas
 
     override fun onBindViewHolder(holder: UlasanViewHolder, position: Int) {
         val ulasan = items[position]
-        holder.imgResto.setImageResource(ulasan.imgResto)
-        holder.tvNamaResto.text = ulasan.namaResto
-        holder.tvMenuPesan.text = ulasan.menuPesan
-        holder.tvReviewText.text = ulasan.reviewText
-        holder.tvReviewerName.text = ulasan.reviewerName
-        holder.imgReviewer.setImageResource(ulasan.imgReviewer)
+        val restoDefault = R.drawable.resto
+        val profileDefault = R.drawable.resto
+
+        holder.tvNamaResto.text = "Nama Restoran"
+        holder.tvMenuPesan.text = ulasan?.productName
+        holder.tvReviewText.text = ulasan?.comment
+        holder.tvReviewerName.text = ulasan?.customerName
+        holder.tvReviewTime.text = ulasan?.updatedAt
+
+        holder.imgResto.setImageResource(restoDefault)
+        holder.imgReviewer.setImageResource(profileDefault)
+    }
+
+    fun updateData(newReviews: List<ReviewResponseItem?>) {
+        this.items= newReviews
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = items.size

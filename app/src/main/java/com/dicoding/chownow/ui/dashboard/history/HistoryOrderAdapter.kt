@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.HistoryOrder
@@ -13,7 +14,7 @@ import java.util.Locale
 
 class HistoryOrderAdapter(private val items: List<HistoryOrder>) : RecyclerView.Adapter<HistoryOrderAdapter.HistoryOrderViewHolder>() {
 
-    class HistoryOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class HistoryOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgResto: ImageView = view.findViewById(R.id.iv_resto)
         val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
         val tvJumlahPesanan: TextView = view.findViewById(R.id.tv_jumlah_pesanan_value)
@@ -37,6 +38,7 @@ class HistoryOrderAdapter(private val items: List<HistoryOrder>) : RecyclerView.
 //        val dateFormatter = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
         val dateFormatter = SimpleDateFormat("dd MMM, HH:mm", Locale.getDefault())
         holder.tvWaktuPesan.text = "${dateFormatter.format(order.waktuPesan)}"
+
     }
 
     override fun getItemCount() = items.size

@@ -40,7 +40,7 @@
         <activity
             android:name=".ui.dashboard.resto.detail.RestoDetailActivity"
             android:exported="true"
-            android:theme="@style/Base.Theme.ChowNow"/>
+            android:theme="@style/Base.Theme.ChowNow" />
         <activity
             android:name=".ui.dashboard.geolocation.LocationActivity"
             android:exported="true"
@@ -51,7 +51,7 @@
             android:theme="@style/Base.Theme.ChowNow" />
         <activity
             android:name=".ui.dashboard.DashboardActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Base.Theme.ChowNow"
             android:windowSoftInputMode="adjustPan" />
         <activity

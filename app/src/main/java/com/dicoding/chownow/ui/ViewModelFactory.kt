@@ -3,7 +3,7 @@ package com.dicoding.chownow.ui
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.chownow.data.UserRepository
+import com.dicoding.chownow.data.repository.UserRepository
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.di.Injection

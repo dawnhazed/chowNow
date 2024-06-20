@@ -15,12 +15,13 @@ class LocationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLocationBinding
     private val viewModel: HomeViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val location = listOf(
+        val locations = listOf(
             Location("Jakarta"),
             Location("Bandung"),
             Location("Jogja"),
@@ -28,28 +29,16 @@ class LocationActivity : AppCompatActivity() {
             Location("Surabaya")
         )
 
-        val adapter = LocationAdapter(location) { selectedLocation ->
-            viewModel.setSelectedLocation(selectedLocation.namaLokasi)
-            val intent = Intent(this, DashboardActivity::class.java)
-            startActivity(intent)
+        val adapter = LocationAdapter(locations) { selectedLocation ->
+            val intent = Intent().apply {
+                putExtra("selected_location", selectedLocation.namaLokasi)
+            }
+            setResult(RESULT_OK, intent)
+            finish() // Close the LocationActivity and return to HomeFragment
         }
 
         binding.rvLocation.adapter = adapter
         binding.rvLocation.layoutManager = LinearLayoutManager(this)
-        binding.ivBack.setOnClickListener { backIntent() }
-    }
-
-    private fun selectLocation(location: Location) {
-        val loc = location.namaLokasi
-        val intent = Intent(this, DashboardActivity::class.java).apply {
-            putExtra("selected_location", location.namaLokasi)
-            Log.d("pilih lokasi", "lokasi = $loc")
-        }
-        startActivity(intent)
-    }
-
-    private fun backIntent(){
-        val intent = Intent(this, DashboardActivity::class.java)
-        startActivity(intent)
+        binding.ivBack.setOnClickListener { finish() }
     }
 }

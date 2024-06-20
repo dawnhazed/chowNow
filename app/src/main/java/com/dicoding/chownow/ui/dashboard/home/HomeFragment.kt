@@ -1,5 +1,6 @@
 package com.dicoding.chownow.ui.dashboard.home
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -28,13 +29,15 @@ import com.dicoding.chownow.ui.loginregister.register.RegisterActivity
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
     private val viewModel: HomeViewModel by activityViewModels()
 
+    companion object {
+        const val REQUEST_LOCATION = 1
+    }
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -44,6 +47,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupView()
+
         // Setup RecyclerView Rekomendasi Resto
         val recyclerViewResto: RecyclerView = view.findViewById(R.id.rv_resto_rekomendasi)
         recyclerViewResto.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -57,7 +61,6 @@ class HomeFragment : Fragment() {
             Resto(R.drawable.breakfast, "Nama Restoran 1", 35, 4.5f),
             Resto(R.drawable.breakfast, "Nama Restoran 2", 50, 4.7f),
             Resto(R.drawable.breakfast, "Nama Restoran 3", 75, 4.9f)
-            // Tambahkan lebih banyak restoran sesuai kebutuhan
         )
 
         // Siapkan data Ulasan
@@ -78,7 +81,6 @@ class HomeFragment : Fragment() {
                 "Ratna Dewi",
                 R.drawable.ic_launcher_background
             )
-            // Tambahkan lebih banyak ulasan sesuai kebutuhan
         )
 
         // Atur adapter untuk Resto
@@ -90,16 +92,15 @@ class HomeFragment : Fragment() {
         recyclerViewUlasan.adapter = adapterUlasan
 
         binding.btnEditLokasi.setOnClickListener { intentLocation() }
-        binding.tvLihatLebih.setOnClickListener { intentResto() }
 
+        // Update lokasi ketika viewModel berubah
         viewModel.selectedLocation.observe(viewLifecycleOwner) { location ->
-            Log.d("DashboardFragment", "Observed location change: $location")
-            binding.tvLokasiSaatIniValue.text = location.toString()
+            Log.d("HomeFragment", "Observed location change: $location")
+            binding.tvLokasiSaatIniValue.text = location
         }
     }
 
     private fun setupView() {
-        @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             activity?.window?.insetsController?.hide(WindowInsets.Type.statusBars())
         } else {
@@ -111,17 +112,23 @@ class HomeFragment : Fragment() {
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
     }
 
+    private fun intentLocation() {
+        val intent = Intent(context, LocationActivity::class.java)
+        startActivityForResult(intent, REQUEST_LOCATION)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_LOCATION && resultCode == Activity.RESULT_OK) {
+            val location = data?.getStringExtra("selected_location")
+            location?.let {
+                viewModel.setSelectedLocation(it)
+            }
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun intentLocation(){
-        val intent = Intent(context, LocationActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun intentResto(){
-        findNavController().navigate(R.id.action_restoFragment_to_homeFragment)
     }
 }

@@ -11,6 +11,6 @@ class HomeViewModel : ViewModel() {
 
     fun setSelectedLocation(location: String) {
         _selectedLocation.value = location
-        Log.d("home vm", "$location")
+        Log.d("HomeViewModel", "Set location to $location")
     }
 }

@@ -1,8 +1,8 @@
 package com.dicoding.chownow.di
 
 import android.content.Context
-import com.dicoding.chownow.data.RestoRepository
-import com.dicoding.chownow.data.UserRepository
+import com.dicoding.chownow.data.repository.RestoRepository
+import com.dicoding.chownow.data.repository.UserRepository
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig.getApiService

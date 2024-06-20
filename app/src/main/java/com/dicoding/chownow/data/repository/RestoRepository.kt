@@ -1,4 +1,4 @@
-package com.dicoding.chownow.data
+package com.dicoding.chownow.data.repository
 
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.remote.retrofit.ApiService
@@ -7,7 +7,6 @@ class RestoRepository private constructor(
     private val apiService: ApiService,
     private val userPreferences: UserPreference
 ) {
-
 
 
 

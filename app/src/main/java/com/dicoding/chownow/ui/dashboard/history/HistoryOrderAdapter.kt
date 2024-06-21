@@ -9,35 +9,37 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.HistoryOrder
+import com.dicoding.chownow.data.model.Location
+import com.dicoding.chownow.databinding.ItemOrderHistoryBinding
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class HistoryOrderAdapter(private val items: List<HistoryOrder>) : RecyclerView.Adapter<HistoryOrderAdapter.HistoryOrderViewHolder>() {
+class HistoryOrderAdapter(private val items: List<HistoryOrder>, private val onClick: (HistoryOrder) -> Unit) : RecyclerView.Adapter<HistoryOrderAdapter.HistoryOrderViewHolder>() {
 
-    inner class HistoryOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imgResto: ImageView = view.findViewById(R.id.iv_resto)
+    class HistoryOrderViewHolder(val binding: ItemOrderHistoryBinding) : RecyclerView.ViewHolder(binding.root)
+    /* {
+       val imgResto: ImageView = view.findViewById(R.id.iv_resto)
         val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
         val tvJumlahPesanan: TextView = view.findViewById(R.id.tv_jumlah_pesanan_value)
         val tvWaktuPesan: TextView = view.findViewById(R.id.tv_waktu_pesan_value)
-    }
+    } */
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryOrderViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_order_history, parent, false)
-        return HistoryOrderViewHolder(view)
+        val binding = ItemOrderHistoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return HistoryOrderViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: HistoryOrderViewHolder, position: Int) {
         val order = items[position]
-        holder.imgResto.setImageResource(order.imgResto)
-        holder.tvNamaResto.text = order.namaResto
-        holder.tvJumlahPesanan.text = "${order.jumlahPesanan} Makanan"
-
-        val context = holder.itemView.context
-
-        // Format date
-//        val dateFormatter = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
         val dateFormatter = SimpleDateFormat("dd MMM, HH:mm", Locale.getDefault())
-        holder.tvWaktuPesan.text = "${dateFormatter.format(order.waktuPesan)}"
+        val photo = R.drawable.food_example
+        with(holder.binding){
+            ivResto.setImageResource(photo)
+            tvNamaResto.text = order.namaResto
+            tvWaktuPesanValue.text = "${dateFormatter.format(order.waktuPesan)}"
+            tvJumlahPesananValue.text = "${order.jumlahPesanan} Item"
+            root.setOnClickListener { onClick(order) }
+        }
 
     }
 

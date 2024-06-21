@@ -28,7 +28,8 @@ class StatusAdapter (private val items: MutableList<FoodItem>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: StatusViewHolder, position: Int) {
         val order = items[position]
-        // holder.imgResto.setImageResource(order.imgMenu)
+        val photo = R.drawable.food_example
+        holder.imgResto.setImageResource(photo)
         holder.tvName.text = order.name
         holder.tvQuantity.text = "${order.quantity}x"
         holder.tvPrice.text = "Rp${order.price}"

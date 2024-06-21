@@ -21,6 +21,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="16dp"
+            android:scaleType="centerCrop"
             android:background="@drawable/ic_launcher_background"
             android:contentDescription="@string/restaurant_image"
             app:layout_constraintBottom_toBottomOf="parent"

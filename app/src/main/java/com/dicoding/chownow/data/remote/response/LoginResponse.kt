@@ -8,6 +8,9 @@ data class LoginResponse(
     val token: String? = null,
 
     @field:SerializedName("error")
-    val error: String? = null
+    val error: String? = null,
+
+    @field:SerializedName("userId")
+    val userId: String? = null
 
 )

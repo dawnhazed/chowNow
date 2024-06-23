@@ -16,7 +16,7 @@
         android:clipToPadding="false"
         android:padding="0dp"
         app:layout_behavior="@string/material_motion_easing_linear"
-        tools:listitem="@layout/item_menu">
+        tools:listitem="@layout/item_menu_search">
 
     </androidx.recyclerview.widget.RecyclerView>
 

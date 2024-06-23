@@ -1,15 +1,13 @@
 package com.dicoding.chownow.data.remote.retrofit
 
-import com.dicoding.chownow.data.remote.response.LoginResponse
-import com.dicoding.chownow.data.remote.response.RegisterResponse
-import com.dicoding.chownow.data.remote.response.RestoResponse
-import com.dicoding.chownow.data.remote.response.ReviewResponse
-import com.dicoding.chownow.data.remote.response.ReviewResponseItem
+import com.dicoding.chownow.data.remote.response.*
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
     @FormUrlEncoded
@@ -28,12 +26,21 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-    /* @FormUrlEncoded
     @POST("recommend/{userId}")
     fun recommend(
-        @Field("userId") userId: Int,
-    ): Call<RecResponse> */
+        @Path("userId") userId: Int
+    ): Call<List<RecommendResponse>>
 
     @GET("reviews")
-    fun reviews() : Call<List<ReviewResponseItem>>
+    fun reviews(): Call<List<ReviewResponseItem>>
+
+    @GET("search")
+    fun search(
+        @Query("query") query: String
+    ): Call<SearchResponse>
+
+    @GET("menu/search")
+    fun searchMenu(
+        @Query("query") query: String
+    ): Call<MenuResponse>
 }

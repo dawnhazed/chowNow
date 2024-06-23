@@ -3,9 +3,7 @@ package com.dicoding.chownow.ui.dashboard
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,11 +13,11 @@ import com.dicoding.chownow.R
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.databinding.ActivityDashboardBinding
-import com.dicoding.chownow.ui.dashboard.profile.ProfileFragment
 import com.dicoding.chownow.ui.loginregister.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+
 
 class DashboardActivity : AppCompatActivity() {
 

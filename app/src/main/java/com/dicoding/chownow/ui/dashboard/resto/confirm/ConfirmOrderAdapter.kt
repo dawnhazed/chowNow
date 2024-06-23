@@ -8,10 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.FoodMenu
-import com.dicoding.chownow.data.model.HistoryOrder
-import com.dicoding.chownow.ui.dashboard.history.HistoryOrderAdapter
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 class ConfirmOrderAdapter (private val items: List<FoodMenu>) : RecyclerView.Adapter<ConfirmOrderAdapter.ConfirmOrderViewHolder>() {
 
@@ -22,7 +18,7 @@ class ConfirmOrderAdapter (private val items: List<FoodMenu>) : RecyclerView.Ada
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConfirmOrderViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_menu, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_search, parent, false)
         return ConfirmOrderViewHolder(view)
     }
 

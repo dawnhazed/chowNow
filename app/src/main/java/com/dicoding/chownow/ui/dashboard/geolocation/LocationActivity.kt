@@ -14,7 +14,6 @@ import com.dicoding.chownow.ui.dashboard.home.HomeViewModel
 class LocationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLocationBinding
-    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +33,7 @@ class LocationActivity : AppCompatActivity() {
                 putExtra("selected_location", selectedLocation.namaLokasi)
             }
             setResult(RESULT_OK, intent)
-            finish() // Close the LocationActivity and return to HomeFragment
+            finish()
         }
 
         binding.rvLocation.adapter = adapter

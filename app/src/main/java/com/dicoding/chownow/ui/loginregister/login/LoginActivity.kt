@@ -133,11 +133,12 @@ class LoginActivity : AppCompatActivity() {
             if (response?.token != null) {
                 val email = binding.tvEmailValue.text.toString()
                 val token = response.token
+                val userId = response.userId.toString() // Ubah userId ke string
                 saveToken(token)
-                Log.d("observe viewmodel", "token = $token")
+                Log.d("observe viewmodel", "token = $token, userId = $userId")
                 lifecycleScope.launch {
-                    pref.saveSession(UserModel(email, token, true))
-                    Log.d("lifecycle scope", "token = $token")
+                    pref.saveSession(UserModel(email, token, true, userId))
+                    Log.d("lifecycle scope", "token = $token, userId = $userId")
                     showDialogue("Anda berhasil login.")
                 }
             } else {

@@ -5,11 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dicoding.chownow.data.repository.UserRepository
 import com.dicoding.chownow.data.pref.UserModel
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.remote.response.LoginResponse
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig
+import com.dicoding.chownow.data.repository.UserRepository
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,12 +46,12 @@ class LoginViewModel(
                 ) {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
-                        loginResponse?.let{
+                        loginResponse?.let {
                             _loginResult.value = it
                             Log.d("login user", "Login Successful!")
 
                             viewModelScope.launch {
-                                userPreference.saveSession(UserModel(email, it.token ?: "", true))
+                                userPreference.saveSession(UserModel(email, it.token ?: "", true, it.userId.toString()))
                             }
                         }
                     } else {
@@ -60,12 +60,29 @@ class LoginViewModel(
                     }
                 }
 
-                override fun onFailure(p0: Call<LoginResponse>, p1: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     _loginResult.value = null
                     Log.d("login user", "Login Error")
                 }
             })
-        /* viewModelScope.launch {
+    }
+}
+
+//    fun performLogin(email: String, password: String, onResult: (Boolean) -> Unit) {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            // Simulasi operasi login berat, misalnya memeriksa kredensial ke server
+//            // Ganti dengan operasi jaringan asli Anda
+//            Thread.sleep(2000) // Simulasi waktu tunggu
+//            val success = email == "test@example.com" && password == "password"
+//
+//            // Kembali ke UI thread untuk mengupdate hasil
+//            launch(Dispatchers.Main) {
+//                onResult(success)
+//            }
+//        }
+//    }
+
+/* viewModelScope.launch {
             try {
                 val response = userRepository.loginUser(email, password)
                 if (!response.error!!) {
@@ -83,20 +100,3 @@ class LoginViewModel(
                 // Handle error
             }
         } */
-    }
-
-//    fun performLogin(email: String, password: String, onResult: (Boolean) -> Unit) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            // Simulasi operasi login berat, misalnya memeriksa kredensial ke server
-//            // Ganti dengan operasi jaringan asli Anda
-//            Thread.sleep(2000) // Simulasi waktu tunggu
-//            val success = email == "test@example.com" && password == "password"
-//
-//            // Kembali ke UI thread untuk mengupdate hasil
-//            launch(Dispatchers.Main) {
-//                onResult(success)
-//            }
-//        }
-//    }
-
-}

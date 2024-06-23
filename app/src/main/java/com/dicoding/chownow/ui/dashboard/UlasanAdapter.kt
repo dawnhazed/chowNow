@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.chownow.R
-import com.dicoding.chownow.data.model.Ulasan
 import com.dicoding.chownow.data.remote.response.ReviewResponseItem
 
 class UlasanAdapter(private var items: List<ReviewResponseItem?>) : RecyclerView.Adapter<UlasanAdapter.UlasanViewHolder>() {
@@ -44,7 +43,7 @@ class UlasanAdapter(private var items: List<ReviewResponseItem?>) : RecyclerView
     }
 
     fun updateData(newReviews: List<ReviewResponseItem?>) {
-        this.items= newReviews
+        this.items = newReviews.take(10) // Limit to 10 reviews
         notifyDataSetChanged()
     }
 

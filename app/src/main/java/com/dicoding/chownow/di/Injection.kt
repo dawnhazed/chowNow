@@ -1,13 +1,12 @@
 package com.dicoding.chownow.di
 
 import android.content.Context
-import com.dicoding.chownow.data.repository.RestoRepository
+import com.dicoding.chownow.data.repository.RestaurantRepository
 import com.dicoding.chownow.data.repository.UserRepository
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig.getApiService
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
+import com.dicoding.chownow.data.local.AppDatabase
 
 object Injection {
     fun provideRepository(context: Context): UserRepository {
@@ -16,10 +15,10 @@ object Injection {
         return UserRepository.getInstance(pref, apiService)
     }
 
-    fun provideRestoRepository(context: Context): RestoRepository {
-        val pref = UserPreference.getInstance(context.dataStore)
-        val user = runBlocking { pref.getSession().first() }
+    fun provideRestoRepository(context: Context): RestaurantRepository {
+        val database = AppDatabase.getDatabase(context)
+        val restaurantDao = database.restaurantDao()
         val apiService = getApiService()
-        return RestoRepository.getInstance(apiService, pref)
+        return RestaurantRepository.getInstance(apiService, restaurantDao)
     }
 }

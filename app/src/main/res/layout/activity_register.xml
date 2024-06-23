@@ -8,11 +8,20 @@
     android:padding="32dp"
     tools:context=".ui.loginregister.register.RegisterActivity">
 
+    <Space
+        android:id="@+id/space_top_register"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="@string/daftar"
@@ -21,7 +30,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/space_top_register"/>
 
     <TextView
         android:id="@+id/tv_nama"
@@ -40,6 +49,9 @@
         android:id="@+id/tv_nama_value"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:hint="Nama"
         android:background="@drawable/roundedtextbox"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -64,6 +76,9 @@
         android:id="@+id/tv_username_value"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:hint="Username"
         android:background="@drawable/roundedtextbox"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -88,6 +103,9 @@
         android:id="@+id/tv_email_value"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:autofillHints=""
+        android:inputType="textEmailAddress"
+        android:hint="Email Adress"
         android:background="@drawable/roundedtextbox"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -114,6 +132,8 @@
         android:layout_height="60dp"
         android:background="@drawable/roundedtextbox"
         android:inputType="textPassword"
+        android:autofillHints=""
+        android:hint="Password min. 8 char"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         app:endIconMode="password_toggle"
@@ -153,6 +173,8 @@
         android:layout_height="60dp"
         android:background="@drawable/roundedtextbox"
         android:inputType="textPassword"
+        android:autofillHints=""
+        android:hint="Type your password again"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         app:endIconMode="password_toggle"
@@ -215,5 +237,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:visibility="gone" />
+
+    <Space
+        android:id="@+id/space_bottom_register"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_from_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,10 +20,11 @@ import com.dicoding.chownow.data.model.ListResto
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.data.remote.response.RecommendResponse
-import com.dicoding.chownow.data.remote.response.RecommendationItem
 import com.dicoding.chownow.data.remote.response.ReviewResponseItem
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig
 import com.dicoding.chownow.databinding.FragmentHomeBinding
+import com.dicoding.chownow.ui.dashboard.RestoRekomendasiAdapter
+import com.dicoding.chownow.ui.dashboard.resto.ListRestoAdapter
 import com.dicoding.chownow.ui.dashboard.UlasanAdapter
 import com.dicoding.chownow.ui.dashboard.geolocation.LocationActivity
 import com.dicoding.chownow.ui.dashboard.shared.SharedViewModel
@@ -66,6 +68,9 @@ class HomeFragment : Fragment() {
         // Initialize reviewAdapter
         reviewAdapter = UlasanAdapter(reviewResponse)
 
+        val recyclerViewRekomendasi: RecyclerView = binding.rvRestoRekomendasi
+        recyclerViewRekomendasi.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
         setupRecyclerView()
 
         // Collect user session data
@@ -76,6 +81,13 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+
+        // Observe data restoran dari SharedViewModel
+        sharedViewModel.restaurants.observe(viewLifecycleOwner, Observer { restaurants ->
+            // Atur adapter untuk Resto
+            val adapter = RestoRekomendasiAdapter(restaurants)
+            recyclerViewRekomendasi.adapter = adapter
+        })
 
         binding.btnEditLokasi.setOnClickListener { intentLocation() }
         viewModel.selectedLocation.observe(viewLifecycleOwner) { location ->

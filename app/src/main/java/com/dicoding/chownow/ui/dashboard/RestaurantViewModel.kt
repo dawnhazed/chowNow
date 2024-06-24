@@ -1,10 +1,7 @@
 package com.dicoding.chownow.ui.dashboard
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.dicoding.chownow.data.local.AppDatabase
 import com.dicoding.chownow.data.local.entity.RestaurantEntity
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig

@@ -16,7 +16,6 @@ class SearchRestoAdapter(private val items: List<RestaurantEntity>) : RecyclerVi
     class SearchRestoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgResto: ImageView = view.findViewById(R.id.iv_resto)
         val tvNamaResto: TextView = view.findViewById(R.id.tv_nama_resto)
-        val tvLocation: TextView = view.findViewById(R.id.tv_location)
         val ratingBar: RatingBar = view.findViewById(R.id.rating_bar)
     }
 
@@ -31,7 +30,6 @@ class SearchRestoAdapter(private val items: List<RestaurantEntity>) : RecyclerVi
             .load(resto.restoImage)
             .into(holder.imgResto)
         holder.tvNamaResto.text = resto.name
-        holder.tvLocation.text = resto.location
         holder.ratingBar.rating = resto.rating
     }
 

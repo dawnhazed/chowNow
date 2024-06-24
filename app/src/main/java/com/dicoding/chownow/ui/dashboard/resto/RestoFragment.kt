@@ -14,9 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.chownow.R
 import com.dicoding.chownow.databinding.FragmentRestoBinding
-import com.dicoding.chownow.ui.dashboard.ListRestoAdapter
 import com.dicoding.chownow.ui.dashboard.shared.SharedViewModel
 
 class RestoFragment : Fragment() {

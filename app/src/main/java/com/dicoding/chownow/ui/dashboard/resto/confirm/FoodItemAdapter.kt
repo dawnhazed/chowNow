@@ -1,4 +1,4 @@
-package com.dicoding.chownow.ui.dashboard.resto
+package com.dicoding.chownow.ui.dashboard.resto.confirm
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

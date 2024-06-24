@@ -3,16 +3,11 @@ package com.dicoding.chownow.ui.dashboard.resto.confirm
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.chownow.R
 import com.dicoding.chownow.data.model.FoodItem
 import com.dicoding.chownow.databinding.ActivityConfirmOrderBinding
 import com.dicoding.chownow.ui.dashboard.history.StatusActivity
-import com.dicoding.chownow.ui.dashboard.resto.FoodItemAdapter
 import com.dicoding.chownow.ui.dashboard.resto.detail.RestoDetailActivity
 
 class ConfirmOrderActivity : AppCompatActivity() {

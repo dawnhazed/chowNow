@@ -19,6 +19,7 @@ import com.dicoding.chownow.data.model.ListResto
 import com.dicoding.chownow.data.pref.UserPreference
 import com.dicoding.chownow.data.pref.dataStore
 import com.dicoding.chownow.data.remote.response.RecommendResponse
+import com.dicoding.chownow.data.remote.response.RecommendationItem
 import com.dicoding.chownow.data.remote.response.ReviewResponseItem
 import com.dicoding.chownow.data.remote.retrofit.ApiConfig
 import com.dicoding.chownow.databinding.FragmentHomeBinding
@@ -116,10 +117,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun getRecommendationResto(userId: Int) {
-        ApiConfig.getApiService().recommend(userId).enqueue(object : Callback<List<RecommendResponse>> {
-            override fun onResponse(call: Call<List<RecommendResponse>>, response: Response<List<RecommendResponse>>) {
+        ApiConfig.getApiService().recommend(userId).enqueue(object : Callback<RecommendResponse> {
+            override fun onResponse(call: Call<RecommendResponse>, response: Response<RecommendResponse>) {
                 if (response.isSuccessful) {
-                    val recommendations = response.body()?.flatMap { it.recommendation.orEmpty() } ?: listOf()
+                    val recommendations = response.body()?.recommendation.orEmpty()
                     Log.d("HomeFragment", "API response received: $recommendations")
 
                     // Update UI with recommendation data
@@ -139,12 +140,13 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<RecommendResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<RecommendResponse>, t: Throwable) {
                 Log.e("HomeFragment", "API call failed: ${t.message}")
                 Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
+
 
     private fun getReviews() {
         ApiConfig.getApiService().reviews().enqueue(object : Callback<List<ReviewResponseItem>> {

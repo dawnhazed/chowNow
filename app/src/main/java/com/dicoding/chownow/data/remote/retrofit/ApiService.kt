@@ -29,7 +29,7 @@ interface ApiService {
     @POST("recommend/{userId}")
     fun recommend(
         @Path("userId") userId: Int
-    ): Call<List<RecommendResponse>>
+    ): Call<RecommendResponse>
 
     @GET("reviews")
     fun reviews(): Call<List<ReviewResponseItem>>

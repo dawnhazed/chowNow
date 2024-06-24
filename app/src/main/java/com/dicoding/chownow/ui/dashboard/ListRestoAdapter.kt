@@ -19,7 +19,7 @@ class ListRestoAdapter(private val items: List<ListResto>) : RecyclerView.Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListRestoViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_resto_search, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_resto, parent, false)
         return ListRestoViewHolder(view)
     }
 
